@@ -8,8 +8,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: false,
   async rewrites() {
     return {
-      // Serve the pure static homepage (public/index.html) at "/"
-      beforeFiles: [{ source: "/", destination: "/index.html" }],
+      // Serve the pure static pages from /public at pretty URLs
+      beforeFiles: [
+        { source: "/", destination: "/index.html" },
+        { source: "/city", destination: "/city.html" },
+      ],
       afterFiles: [],
       fallback: [],
     };
