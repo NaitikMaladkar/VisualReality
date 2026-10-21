@@ -99,14 +99,32 @@
     document.querySelectorAll("[data-count-to]")
   );
 
+  function getTarget(el) {
+    var v = parseFloat(el.getAttribute("data-count-to"));
+    return isNaN(v) ? 0 : v;
+  }
+
+  function getDecimals(el) {
+    return parseInt(el.getAttribute("data-decimals") || "0", 10) || 0;
+  }
+
+  function fmtCount(v, decimals, plain) {
+    if (decimals > 0) return v.toFixed(decimals);
+    if (plain) return String(Math.round(v));
+    return Math.round(v).toLocaleString("en-US");
+  }
+
   function renderFinal(el) {
-    var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
-    el.textContent = target + (el.getAttribute("data-suffix") || "");
+    el.textContent =
+      fmtCount(getTarget(el), getDecimals(el), el.hasAttribute("data-plain")) +
+      (el.getAttribute("data-suffix") || "");
   }
 
   function animateCounter(el) {
-    var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+    var target = getTarget(el);
+    var decimals = getDecimals(el);
     var suffix = el.getAttribute("data-suffix") || "";
+    var plain = el.hasAttribute("data-plain");
     var duration = 1700;
     var start = null;
 
@@ -114,7 +132,7 @@
       if (start === null) start = ts;
       var progress = Math.min((ts - start) / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-      el.textContent = Math.round(target * eased) + suffix;
+      el.textContent = fmtCount(target * eased, decimals, plain) + suffix;
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }

@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
         { source: "/city", destination: "/city.html" },
         { source: "/timeline", destination: "/timeline.html" },
         { source: "/carbon", destination: "/carbon.html" },
+        { source: "/museum", destination: "/museum.html" },
+        { source: "/impact", destination: "/impact.html" },
       ],
       afterFiles: [],
       fallback: [],
