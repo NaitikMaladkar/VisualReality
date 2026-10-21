@@ -1278,6 +1278,12 @@ button {
   flex: none;
 }
 
+/* Timeline promo banner variant (teal-tinted) */
+.tl-banner-inner {
+  background: linear-gradient(120deg, #e7f4fb 0%, #e6f8f1 100%);
+  border-color: rgba(13, 148, 136, 0.24);
+}
+
 @media (max-width: 720px) {
   .sim-banner-inner {
     flex-direction: column;

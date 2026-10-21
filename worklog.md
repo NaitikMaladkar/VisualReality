@@ -57,3 +57,23 @@ Work Log:
 Stage Summary:
 - New page /city (city.html/city.css/city.js) — all 4 requested features implemented and refined: year toggle 2026/2040/2060, clickable building inspector with era-aware sustainable tech, day/night cycle with auto-run + smart lighting + energy grid readout, pollution gauge driven by era + 4 policies + per-building upgrades
 - Homepage cross-linked via nav, footer and a new promo banner
+
+---
+Task ID: 4
+Agent: main (Z.ai)
+Task: Add an "Innovation Timeline" page (animated past→present→future timeline, interactive flip cards with real facts and stats)
+
+Work Log:
+- Built public/timeline.html (~555 lines): hero with interactive horizontal era rail (11 clickable year dots + 3 era jump buttons that double as scrollspy mini-map), filterable vertical timeline (center spine, alternating cards) with 11 milestones across 3 era bands — Past (1954 Bell Labs solar cell, 1980 wind farms, 1997 Prius), Present (2016 DeepMind AI cooling, 2017 green computing/24-7 CFE, 2020 IEA "cheapest electricity in history", 2024 electric decade), Future (2027 iron-air/sodium storage, 2035 fusion, 2040 AI planet stewardship, 2050 net-zero horizon) — each card front = year/category chip/teaser, back = 3 animated stats with bars, story, source line; dark-green outro panel with 3 counters + CTAs to City Simulator/newsletter; compact footer
+- Built public/timeline.css (~745 lines): 3D flip cards (hover on fine pointers, click/Enter/Space toggle with aria-pressed), era-tinted card backs (sand/mint/cyan), scroll-driven spine fill with glowing head, lit nodes, era rail styles, filter chips, outro panel, breakpoints 1024/880/560, prefers-reduced-motion support
+- Built public/timeline.js (~300 lines): scroll progress engine (spine height %, rail scaleX, node/dot lighting via rAF), flip handlers + per-card count-up (decimals/prefix/suffix aware, thousand separators), rail dot jump + flash highlight + auto unfilter, era jump, era filters with side re-alternating + "Showing X of 11" live region, adaptive card heights (measures both faces, resize/font-load/filter aware)
+- Fixed counter conflict: renamed card stat attributes to data-tl-* (30 stats) so shared script.js global counter (int-only) can't corrupt decimals/prefixes; 3 outro counters kept on data-count-to for script.js
+- Fixed during browser verification: card sides (default margin auto on wrong side → all cards right; corrected to left-default alternation LRLR...), era node overlapping band text (moved to top edge), mobile era labels overlap (hidden ≤560px), mobile rail year labels glued (compact 0.6rem sizing), back-face clipping on mobile (replaced fixed heights with JS adaptive heights: card 0 → 501px, dense card → 544px, all faces fit)
+- Homepage integration: nav "Timeline" link (Mission kept in footer only for nav width), footer Explore link, new teal-tinted promo banner ("Seventy years of saving tomorrow.") after the City Simulator banner; styles.css .tl-banner-inner variant
+- city.html: nav + footer Timeline links; next.config.ts: /timeline rewrite
+- Browser-verified at 1280/900/390px: hero rail, flip via hover/click/keyboard (aria-pressed), counters (6%, ~$300/W, 99.9%, <60 s, 5–10% static), bars, spine/rail progress, dot jump + flash, filters (3/11 visible, LRL sides), outro counters, mobile tap-flip + adaptive heights, nav on all 3 pages; zero console errors; bun lint pass
+- Synced all 9 site files to download/visual-reality-site/
+
+Stage Summary:
+- New page /timeline (timeline.html/timeline.css/timeline.js) — past→present→future of sustainable tech with 11 flip cards (solar, wind, EVs, AI, green computing, storage, fusion, net-zero), real sourced facts (Bell Labs, IRENA, IEA WEO 2020, BNEF, DeepMind, Rho Motion, LLNL/ITER, BCG), scroll-driven animations, era filters and a horizontal rail mini-map
+- Site now has 3 interconnected experiences: Home, City Simulator, Innovation Timeline — all cross-linked via nav, footers and promo banners

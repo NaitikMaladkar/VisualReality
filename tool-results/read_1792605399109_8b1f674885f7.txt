@@ -1,0 +1,575 @@
+     1→     1→<!DOCTYPE html>
+     2→     2→<html lang="en">
+     3→     3→<head>
+     4→     4→  <meta charset="UTF-8" />
+     5→     5→  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     6→     6→  <title>Visual Reality — Tech for Tomorrow | Science, Innovation &amp; Sustainability</title>
+     7→     7→  <meta name="description" content="Visual Reality spotlights the breakthroughs in clean energy, climate-smart AI and circular design where science, innovation and sustainability meet. Tech for tomorrow — without costing the Earth." />
+     8→     8→  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='4' y1='4' x2='44' y2='44' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%230ea672'/%3E%3Cstop offset='1' stop-color='%230d9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='44' height='44' rx='13' fill='url(%23g)'/%3E%3Cpath d='M13.5 34.5C13.5 22.5 22.5 13.5 34.5 13.5C34.5 25.5 25.5 34.5 13.5 34.5Z' fill='%23ffffff'/%3E%3Cpath d='M17 31C21.5 26.5 27 21 31.5 16.5' stroke='%230b8266' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M21.8 26.2V22.4' stroke='%230b8266' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='21.8' cy='20.9' r='1.5' fill='%230b8266'/%3E%3Cpath d='M26.5 21.5H30' stroke='%230b8266' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='31.6' cy='21.5' r='1.5' fill='%230b8266'/%3E%3C/svg%3E" />
+     9→     9→  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    10→    10→  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    11→    11→  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    12→    12→  <link rel="stylesheet" href="styles.css" />
+    13→    13→</head>
+    14→    14→<body>
+    15→    15→  <a class="skip-link" href="#main">Skip to content</a>
+    16→    16→
+    17→    17→  <!-- ======= HEADER ======= -->
+    18→    18→  <header class="site-header" id="top">
+    19→    19→    <nav class="nav container" aria-label="Main navigation">
+    20→    20→      <a class="brand" href="#home" aria-label="Visual Reality home">
+    21→    21→        <svg class="logo-mark" width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visual Reality logo — a leaf with circuit veins">
+    22→    22→          <defs>
+    23→    23→            <linearGradient id="lgBadge" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+    24→    24→              <stop stop-color="#0ea672"/>
+    25→    25→              <stop offset="1" stop-color="#0d9488"/>
+    26→    26→            </linearGradient>
+    27→    27→          </defs>
+    28→    28→          <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#lgBadge)"/>
+    29→    29→          <path d="M13.5 34.5C13.5 22.5 22.5 13.5 34.5 13.5C34.5 25.5 25.5 34.5 13.5 34.5Z" fill="#ffffff" fill-opacity="0.96"/>
+    30→    30→          <path d="M17 31C21.5 26.5 27 21 31.5 16.5" stroke="#0b8266" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    31→    31→          <path d="M21.8 26.2V22.4" stroke="#0b8266" stroke-width="1.6" stroke-linecap="round"/>
+    32→    32→          <circle cx="21.8" cy="20.9" r="1.5" fill="#0b8266"/>
+    33→    33→          <path d="M26.5 21.5H30" stroke="#0b8266" stroke-width="1.6" stroke-linecap="round"/>
+    34→    34→          <circle cx="31.6" cy="21.5" r="1.5" fill="#0b8266"/>
+    35→    35→          <circle cx="12.5" cy="12.5" r="2.1" fill="#ffffff"/>
+    36→    36→          <circle cx="12.5" cy="12.5" r="4.4" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.3"/>
+    37→    37→        </svg>
+    38→    38→        <span class="brand-name">Visual <em>Reality</em></span>
+    39→    39→      </a>
+    40→    40→
+    41→    41→      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+    42→    42→        <span class="nav-toggle-bar"></span>
+    43→    43→        <span class="nav-toggle-bar"></span>
+    44→    44→        <span class="nav-toggle-bar"></span>
+    45→    45→      </button>
+    46→    46→
+    47→    47→      <div class="nav-menu" id="nav-menu">
+    48→    48→        <ul class="nav-links">
+    49→    49→          <li><a href="#home" class="nav-link">Home</a></li>
+    50→    50→          <li><a href="#pillars" class="nav-link">Pillars</a></li>
+    51→    51→          <li><a href="#innovations" class="nav-link">Innovations</a></li>
+    52→    52→          <li><a href="#mission" class="nav-link">Mission</a></li>
+    53→    53→          <li><a href="city.html" class="nav-link">City Simulator</a></li>
+    54→    54→        </ul>
+    55→    55→        <a href="#subscribe" class="btn btn-primary btn-sm nav-cta">Join the movement</a>
+    56→    56→      </div>
+    57→    57→    </nav>
+    58→    58→  </header>
+    59→    59→
+    60→    60→  <main id="main">
+    61→    61→    <!-- ======= HERO ======= -->
+    62→    62→    <section class="hero" id="home">
+    63→    63→      <div class="container hero-grid">
+    64→    64→        <div class="hero-copy">
+    65→    65→          <p class="eyebrow reveal">
+    66→    66→            <svg width="14" height="14" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M13.5 34.5C13.5 22.5 22.5 13.5 34.5 13.5C34.5 25.5 25.5 34.5 13.5 34.5Z" fill="#0e9f6e"/><path d="M17 31C21.5 26.5 27 21 31.5 16.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+    67→    67→            Science &middot; Innovation &middot; Sustainability
+    68→    68→          </p>
+    69→    69→          <h1 class="reveal" style="--d:.06s">
+    70→    70→            Tech that moves <span class="grad-text">tomorrow</span> &mdash; without costing the <span class="accent-underline">Earth</span>.
+    71→    71→          </h1>
+    72→    72→          <p class="lead reveal" style="--d:.12s">
+    73→    73→            Visual Reality is your front-row seat to the breakthroughs rebuilding our world:
+    74→    74→            clean energy, climate-smart AI and circular design &mdash; rigorous science and
+    75→    75→            bold innovation, working hand-in-hand with the planet.
+    76→    76→          </p>
+    77→    77→          <div class="hero-actions reveal" style="--d:.18s">
+    78→    78→            <a href="#innovations" class="btn btn-primary">
+    79→    79→              Explore innovations
+    80→    80→              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    81→    81→            </a>
+    82→    82→            <a href="#mission" class="btn btn-ghost">Our mission</a>
+    83→    83→          </div>
+    84→    84→          <ul class="hero-facts reveal" style="--d:.24s">
+    85→    85→            <li>
+    86→    86→              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#0e9f6e" stroke-width="2"/><path d="m8.5 12.2 2.4 2.4 4.6-5" stroke="#0e9f6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    87→    87→              100% open, peer-reviewed science
+    88→    88→            </li>
+    89→    89→            <li>
+    90→    90→              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13.5 34.5C13.5 22.5 22.5 13.5 34.5 13.5C34.5 25.5 25.5 34.5 13.5 34.5Z" fill="#0e9f6e" transform="scale(0.55) translate(2 2)"/></svg>
+    91→    91→              Net-zero operations by 2040
+    92→    92→            </li>
+    93→    93→            <li>
+    94→    94→              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="#0e9f6e" stroke-width="2" stroke-linecap="round"/></svg>
+    95→    95→              Free to read, forever
+    96→    96→            </li>
+    97→    97→          </ul>
+    98→    98→        </div>
+    99→    99→
+   100→   100→        <!-- Animated hero illustration -->
+   101→   101→        <div class="hero-art reveal" style="--d:.15s" aria-hidden="true">
+   102→   102→          <svg class="hero-svg" viewBox="0 0 560 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+   103→   103→            <defs>
+   104→   104→              <radialGradient id="heroGlow" cx="0.5" cy="0.5" r="0.5">
+   105→   105→                <stop stop-color="#b8f2dc" stop-opacity="0.85"/>
+   106→   106→                <stop offset="1" stop-color="#b8f2dc" stop-opacity="0"/>
+   107→   107→              </radialGradient>
+   108→   108→              <linearGradient id="heroLeaf" x1="180" y1="180" x2="380" y2="380" gradientUnits="userSpaceOnUse">
+   109→   109→                <stop stop-color="#10b981"/>
+   110→   110→                <stop offset="1" stop-color="#0d9488"/>
+   111→   111→              </linearGradient>
+   112→   112→              <linearGradient id="heroRing" x1="55" y1="280" x2="505" y2="280" gradientUnits="userSpaceOnUse">
+   113→   113→                <stop stop-color="#0ea672" stop-opacity="0.1"/>
+   114→   114→                <stop offset="0.5" stop-color="#0d9488" stop-opacity="0.85"/>
+   115→   115→                <stop offset="1" stop-color="#0ea672" stop-opacity="0.2"/>
+   116→   116→              </linearGradient>
+   117→   117→            </defs>
+   118→   118→
+   119→   119→            <!-- glow -->
+   120→   120→            <circle cx="280" cy="280" r="255" fill="url(#heroGlow)"/>
+   121→   121→
+   122→   122→            <!-- globe wireframe -->
+   123→   123→            <g stroke="#8fd8c3" stroke-width="1.6" fill="none" opacity="0.9">
+   124→   124→              <circle cx="280" cy="280" r="150"/>
+   125→   125→              <ellipse cx="280" cy="280" rx="60" ry="150"/>
+   126→   126→              <ellipse cx="280" cy="280" rx="115" ry="150"/>
+   127→   127→              <ellipse cx="280" cy="280" rx="150" ry="60"/>
+   128→   128→              <ellipse cx="280" cy="280" rx="150" ry="115"/>
+   129→   129→            </g>
+   130→   130→
+   131→   131→            <!-- static faint orbit -->
+   132→   132→            <ellipse cx="280" cy="280" rx="228" ry="92" transform="rotate(24 280 280)" stroke="#0d9488" stroke-opacity="0.25" stroke-width="1.6" stroke-dasharray="3 8"/>
+   133→   133→
+   134→   134→            <!-- big leaf -->
+   135→   135→            <g>
+   136→   136→              <path d="M180 380C180 250 250 180 380 180C380 310 310 380 180 380Z" fill="url(#heroLeaf)"/>
+   137→   137→              <path d="M215 345C250 300 300 250 350 205" stroke="#eafff6" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.95"/>
+   138→   138→              <path d="M245 302V272" stroke="#eafff6" stroke-width="4" stroke-linecap="round"/>
+   139→   139→              <circle cx="245" cy="264" r="5" fill="#eafff6"/>
+   140→   140→              <path d="M290 262H325" stroke="#eafff6" stroke-width="4" stroke-linecap="round"/>
+   141→   141→              <circle cx="333" cy="262" r="5" fill="#eafff6"/>
+   142→   142→              <circle cx="350" cy="205" r="6" fill="#eafff6"/>
+   143→   143→            </g>
+   144→   144→
+   145→   145→            <!-- spinning orbit + satellite -->
+   146→   146→            <g class="hero-orbit">
+   147→   147→              <ellipse cx="280" cy="280" rx="225" ry="88" transform="rotate(-18 280 280)" stroke="url(#heroRing)" stroke-width="2.4" fill="none"/>
+   148→   148→              <circle cx="494" cy="210" r="8" fill="#047857"/>
+   149→   149→              <circle cx="494" cy="210" r="13" stroke="#047857" stroke-opacity="0.35" stroke-width="2"/>
+   150→   150→            </g>
+   151→   151→
+   152→   152→            <!-- floating chips -->
+   153→   153→            <g transform="translate(88 96)">
+   154→   154→              <g class="chip float-a">
+   155→   155→                <rect x="0" y="0" width="66" height="66" rx="18" fill="#ffffff" stroke="#dcefe6"/>
+   156→   156→                <circle cx="33" cy="30" r="9" stroke="#0ea672" stroke-width="2.4" fill="none"/>
+   157→   157→                <path d="M33 13v5M33 42v5M16 30h5M45 30h5M21 18l3.5 3.5M41.5 38.5 45 42M45 18l-3.5 3.5M24.5 38.5 21 42" stroke="#0ea672" stroke-width="2.4" stroke-linecap="round"/>
+   158→   158→              </g>
+   159→   159→            </g>
+   160→   160→            <g transform="translate(408 72)">
+   161→   161→              <g class="chip float-b">
+   162→   162→                <rect x="0" y="0" width="66" height="66" rx="18" fill="#ffffff" stroke="#dcefe6"/>
+   163→   163→                <ellipse cx="33" cy="33" rx="17" ry="7.5" stroke="#0d9488" stroke-width="2.3" fill="none" transform="rotate(-24 33 33)"/>
+   164→   164→                <ellipse cx="33" cy="33" rx="17" ry="7.5" stroke="#0d9488" stroke-width="2.3" fill="none" transform="rotate(38 33 33)"/>
+   165→   165→                <circle cx="33" cy="33" r="3.4" fill="#0d9488"/>
+   166→   166→              </g>
+   167→   167→            </g>
+   168→   168→            <g transform="translate(64 372)">
+   169→   169→              <g class="chip float-c">
+   170→   170→                <rect x="0" y="0" width="66" height="66" rx="18" fill="#ffffff" stroke="#dcefe6"/>
+   171→   171→                <rect x="19" y="19" width="28" height="28" rx="7" stroke="#047857" stroke-width="2.4" fill="none"/>
+   172→   172→                <rect x="28" y="28" width="10" height="10" rx="2.5" fill="#047857"/>
+   173→   173→                <path d="M26 19v-7M40 19v-7M26 47v7M40 47v7M19 26h-7M19 40h-7M47 26h7M47 40h7" stroke="#047857" stroke-width="2.3" stroke-linecap="round"/>
+   174→   174→              </g>
+   175→   175→            </g>
+   176→   176→            <g transform="translate(428 396)">
+   177→   177→              <g class="chip float-a" style="animation-delay:-2.4s">
+   178→   178→                <rect x="0" y="0" width="66" height="66" rx="18" fill="#ffffff" stroke="#dcefe6"/>
+   179→   179→                <path d="M33 15C33 15 21.5 28 21.5 35.5a11.5 11.5 0 0 0 23 0C44.5 28 33 15 33 15Z" stroke="#0ea672" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+   180→   180→                <path d="M27.5 37a5.5 5.5 0 0 0 5.5 5.5" stroke="#0ea672" stroke-width="2.3" stroke-linecap="round"/>
+   181→   181→              </g>
+   182→   182→            </g>
+   183→   183→
+   184→   184→            <!-- sparkles -->
+   185→   185→            <g class="sparkles" fill="#0d9488">
+   186→   186→              <path d="M150 60h0M150 52v16M142 60h16" stroke="#0d9488" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+   187→   187→              <path d="M470 320v14M463 327h14" stroke="#0d9488" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+   188→   188→              <circle cx="110" cy="300" r="4" opacity="0.35"/>
+   189→   189→              <circle cx="460" cy="180" r="3" opacity="0.4"/>
+   190→   190→              <circle cx="300" cy="70" r="3.4" opacity="0.3"/>
+   191→   191→            </g>
+   192→   192→          </svg>
+   193→   193→        </div>
+   194→   194→      </div>
+   195→   195→    </section>
+   196→   196→
+   197→   197→    <!-- ======= STATS ======= -->
+   198→   198→    <section class="stats" aria-label="Visual Reality in numbers">
+   199→   199→      <div class="container">
+   200→   200→        <div class="stats-card reveal">
+   201→   201→          <div class="stat">
+   202→   202→            <span class="stat-num" data-count-to="250" data-suffix="+">0</span>
+   203→   203→            <span class="stat-label">Innovations tracked &amp; explained</span>
+   204→   204→          </div>
+   205→   205→          <div class="stat">
+   206→   206→            <span class="stat-num" data-count-to="42" data-suffix="M">0</span>
+   207→   207→            <span class="stat-label">Tonnes of CO&#8322; avoided so far</span>
+   208→   208→          </div>
+   209→   209→          <div class="stat">
+   210→   210→            <span class="stat-num" data-count-to="36" data-suffix="">0</span>
+   211→   211→            <span class="stat-label">Countries with active projects</span>
+   212→   212→          </div>
+   213→   213→          <div class="stat">
+   214→   214→            <span class="stat-num" data-count-to="12" data-suffix="K">0</span>
+   215→   215→            <span class="stat-label">Scientists &amp; builders in our network</span>
+   216→   216→          </div>
+   217→   217→        </div>
+   218→   218→      </div>
+   219→   219→    </section>
+   220→   220→
+   221→   221→    <!-- ======= PILLARS ======= -->
+   222→   222→    <section class="pillars section section-alt" id="pillars">
+   223→   223→      <div class="container">
+   224→   224→        <div class="section-head reveal">
+   225→   225→          <p class="eyebrow">What drives us</p>
+   226→   226→          <h2>Three pillars, one planet-first promise</h2>
+   227→   227→          <p class="section-sub">
+   228→   228→            Everything we publish and build passes through the same three lenses &mdash;
+   229→   229→            because tomorrow deserves technology that is brilliant <em>and</em> benign.
+   230→   230→          </p>
+   231→   231→        </div>
+   232→   232→
+   233→   233→        <div class="pillars-grid">
+   234→   234→          <article class="pillar-card reveal">
+   235→   235→            <div class="pillar-icon icon-science">
+   236→   236→              <svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+   237→   237→                <ellipse cx="24" cy="24" rx="18" ry="7" stroke="currentColor" stroke-width="2"/>
+   238→   238→                <ellipse cx="24" cy="24" rx="18" ry="7" stroke="currentColor" stroke-width="2" transform="rotate(60 24 24)"/>
+   239→   239→                <ellipse cx="24" cy="24" rx="18" ry="7" stroke="currentColor" stroke-width="2" transform="rotate(120 24 24)"/>
+   240→   240→                <circle cx="24" cy="24" r="3.2" fill="currentColor"/>
+   241→   241→              </svg>
+   242→   242→            </div>
+   243→   243→            <h3>Science</h3>
+   244→   244→            <p class="pillar-kicker">Discovery, peer-reviewed and open</p>
+   245→   245→            <p>
+   246→   246→              From atmospheric physics to synthetic biology, we translate dense research
+   247→   247→              into clear, honest stories. Every claim links back to its source &mdash; no hype,
+   248→   248→              no hand-waving. Science is the compass that keeps tomorrow on course.
+   249→   249→            </p>
+   250→   250→            <ul class="tag-row" aria-label="Science topics">
+   251→   251→              <li>Open access</li>
+   252→   252→              <li>Peer reviewed</li>
+   253→   253→              <li>Data-first</li>
+   254→   254→            </ul>
+   255→   255→          </article>
+   256→   256→
+   257→   257→          <article class="pillar-card reveal" style="--d:.1s">
+   258→   258→            <div class="pillar-icon icon-innovation">
+   259→   259→              <svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+   260→   260→                <path d="M24 6a12 12 0 0 1 6.8 21.9c-1.3.9-2 2.4-2 4v1.6h-9.6V32c0-1.6-.7-3.1-2-4A12 12 0 0 1 24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+   261→   261→                <path d="M19.5 37.5h9M21 41.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+   262→   262→                <path d="m22 21 2-4 2 4 2-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   263→   263→              </svg>
+   264→   264→            </div>
+   265→   265→            <h3>Innovation</h3>
+   266→   266→            <p class="pillar-kicker">Engineering that turns insight into impact</p>
+   267→   267→            <p>
+   268→   268→              We spotlight the labs, startups and garages shipping real hardware and
+   269→   269→              software &mdash; the solar skins, soil sensors and climate models that move ideas
+   270→   270→              out of the journal and into the world where they can do good at scale.
+   271→   271→            </p>
+   272→   272→            <ul class="tag-row" aria-label="Innovation topics">
+   273→   273→              <li>Deep tech</li>
+   274→   274→              <li>Labs to market</li>
+   275→   275→              <li>Built to scale</li>
+   276→   276→            </ul>
+   277→   277→          </article>
+   278→   278→
+   279→   279→          <article class="pillar-card reveal" style="--d:.2s">
+   280→   280→            <div class="pillar-icon icon-sustain">
+   281→   281→              <svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+   282→   282→                <path d="M12 36C12 22.7 21.3 13 36 13C36 26.3 26.7 36 12 36Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+   283→   283→                <path d="M16 32C20.5 27.5 26 22 31 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+   284→   284→                <path d="M8 42c4-1 7-4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+   285→   285→              </svg>
+   286→   286→            </div>
+   287→   287→            <h3>Sustainability</h3>
+   288→   288→            <p class="pillar-kicker">Progress the planet can afford</p>
+   289→   289→            <p>
+   290→   290→              Technology is only tomorrow-ready if it lasts. We measure every breakthrough
+   291→   291→              against circularity, carbon and community &mdash; because a smarter world should
+   292→   292→              also be a gentler one, for people and ecosystems alike.
+   293→   293→            </p>
+   294→   294→            <ul class="tag-row" aria-label="Sustainability topics">
+   295→   295→              <li>Circular design</li>
+   296→   296→              <li>Net zero</li>
+   297→   297→              <li>Climate equity</li>
+   298→   298→            </ul>
+   299→   299→          </article>
+   300→   300→        </div>
+   301→   301→      </div>
+   302→   302→    </section>
+   303→   303→
+   304→   304→    <!-- ======= INNOVATIONS ======= -->
+   305→   305→    <section class="innovations section" id="innovations">
+   306→   306→      <div class="container">
+   307→   307→        <div class="section-head reveal">
+   308→   308→          <p class="eyebrow">Fresh from the frontier</p>
+   309→   309→          <h2>Innovations in the spotlight</h2>
+   310→   310→          <p class="section-sub">
+   311→   311→            Four fields where tomorrow is already quietly working &mdash; each one
+   312→   312→            verified by our science team and scored against our sustainability bar.
+   313→   313→          </p>
+   314→   314→        </div>
+   315→   315→
+   316→   316→        <div class="innovations-grid">
+   317→   317→          <article class="innov-card reveal">
+   318→   318→            <div class="innov-top">
+   319→   319→              <span class="innov-icon">
+   320→   320→                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+   321→   321→                  <path d="M10 34 17 22h20l-7 12H10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+   322→   322→                  <path d="M18.5 22 22 34M29.5 22 26 34" stroke="currentColor" stroke-width="1.8"/>
+   323→   323→                  <circle cx="31" cy="11" r="4.5" stroke="currentColor" stroke-width="2"/>
+   324→   324→                  <path d="M31 3.5V6M38.5 11H36M26 11h-2.5M36.4 5.6l-1.8 1.8M25.6 5.6l1.8 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+   325→   325→                </svg>
+   326→   326→              </span>
+   327→   327→              <span class="innov-tag">Energy</span>
+   328→   328→            </div>
+   329→   329→            <h3>HelioGrid</h3>
+   330→   330→            <p class="innov-kicker">Sunlight for every rooftop</p>
+   331→   331→            <p>
+   332→   332→              Neighbourhood-scale microgrids that stitch inexpensive solar panels into one
+   333→   333→              intelligent, self-balancing power web &mdash; cutting energy bills and blackout
+   334→   334→              risk at the same time.
+   335→   335→            </p>
+   336→   336→            <a href="#subscribe" class="text-link" aria-label="Learn more about HelioGrid in the Tomorrow Brief">Learn more
+   337→   337→              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   338→   338→            </a>
+   339→   339→          </article>
+   340→   340→
+   341→   341→          <article class="innov-card reveal" style="--d:.08s">
+   342→   342→            <div class="innov-top">
+   343→   343→              <span class="innov-icon">
+   344→   344→                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+   345→   345→                  <rect x="14" y="14" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+   346→   346→                  <rect x="21" y="21" width="6" height="6" rx="1.5" fill="currentColor"/>
+   347→   347→                  <path d="M20 14V8M28 14V8M20 40v-6M28 40v-6M14 20H8M14 28H8M40 20h-6M40 28h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+   348→   348→                </svg>
+   349→   349→              </span>
+   350→   350→              <span class="innov-tag">Climate AI</span>
+   351→   351→            </div>
+   352→   352→            <h3>TerraSense AI</h3>
+   353→   353→            <p class="innov-kicker">A weather eye powered by learning</p>
+   354→   354→            <p>
+   355→   355→              Machine-learning models that fuse satellite and ground sensors to forecast
+   356→   356→              floods, droughts and heatwaves weeks earlier &mdash; giving farmers, insurers and
+   357→   357→              cities precious time to act.
+   358→   358→            </p>
+   359→   359→            <a href="#subscribe" class="text-link" aria-label="Learn more about TerraSense AI in the Tomorrow Brief">Learn more
+   360→   360→              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   361→   361→            </a>
+   362→   362→          </article>
+   363→   363→
+   364→   364→          <article class="innov-card reveal" style="--d:.16s">
+   365→   365→            <div class="innov-top">
+   366→   366→              <span class="innov-icon">
+   367→   367→                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+   368→   368→                  <path d="M36 24a12 12 0 1 1-3.5-8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+   369→   369→                  <path d="M36 9v7h-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   370→   370→                  <path d="M12 24a12 12 0 0 0 3.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+   371→   371→                  <path d="M12 39v-7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+   372→   372→                </svg>
+   373→   373→              </span>
+   374→   374→              <span class="innov-tag">Materials</span>
+   375→   375→            </div>
+   376→   376→            <h3>LoopWeave</h3>
+   377→   377→            <p class="innov-kicker">Products designed to disappear</p>
+   378→   378→            <p>
+   379→   379→              Compostable packaging and textiles engineered from plant fibres, built to
+   380→   380→              return to the soil within 60 days instead of lingering in landfill for
+   381→   381→              centuries. Waste, redesigned out of existence.
+   382→   382→            </p>
+   383→   383→            <a href="#subscribe" class="text-link" aria-label="Learn more about LoopWeave in the Tomorrow Brief">Learn more
+   384→   384→              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   385→   385→            </a>
+   386→   386→          </article>
+   387→   387→
+   388→   388→          <article class="innov-card reveal" style="--d:.24s">
+   389→   389→            <div class="innov-top">
+   390→   390→              <span class="innov-icon">
+   391→   391→                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+   392→   392→                  <path d="M24 7C24 7 13.5 19.5 13.5 27a10.5 10.5 0 0 0 21 0C34.5 19.5 24 7 24 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+   393→   393→                  <path d="M19 28.5a5 5 0 0 0 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+   394→   394→                  <path d="M10 41c2.8-1.8 5.7-1.8 8.5 0 2.8 1.8 5.7 1.8 8.5 0 2.8-1.8 5.7-1.8 8.5 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+   395→   395→                </svg>
+   396→   396→              </span>
+   397→   397→              <span class="innov-tag">Water</span>
+   398→   398→            </div>
+   399→   399→            <h3>AquaPure</h3>
+   400→   400→            <p class="innov-kicker">Drinking water from thin air</p>
+   401→   401→            <p>
+   402→   402→              Off-grid harvesters that pull moisture straight from the atmosphere using
+   403→   403→              only sunlight &mdash; safe drinking water for the regions the pipelines forgot,
+   404→   404→              with no bottles and no boreholes.
+   405→   405→            </p>
+   406→   406→            <a href="#subscribe" class="text-link" aria-label="Learn more about AquaPure in the Tomorrow Brief">Learn more
+   407→   407→              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   408→   408→            </a>
+   409→   409→          </article>
+   410→   410→        </div>
+   411→   411→      </div>
+   412→   412→    </section>
+   413→   413→
+   414→   414→    <!-- ======= SIMULATOR BANNER ======= -->
+   415→   415→    <section class="sim-banner">
+   416→   416→      <div class="container">
+   417→   417→        <div class="sim-banner-inner reveal">
+   418→   418→          <div class="sim-banner-copy">
+   419→   419→            <p class="eyebrow">New &middot; Interactive lab</p>
+   420→   420→            <h2>Fast-forward a city. Watch it heal.</h2>
+   421→   421→            <p>
+   422→   422→              Jump from 2026 to 2060, run a full day of smart lighting and live
+   423→   423→              energy grids, and fund the upgrades that clear the smog gauge &mdash;
+   424→   424→              in our new Future City Simulator.
+   425→   425→            </p>
+   426→   426→          </div>
+   427→   427→          <a class="btn btn-primary sim-banner-btn" href="city.html">
+   428→   428→            Launch the simulator
+   429→   429→            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   430→   430→          </a>
+   431→   431→        </div>
+   432→   432→      </div>
+   433→   433→    </section>
+   434→   434→
+   435→   435→    <!-- ======= MISSION ======= -->
+   436→   436→    <section class="mission" id="mission">
+   437→   437→      <div class="container">
+   438→   438→        <div class="mission-panel reveal">
+   439→   439→          <svg class="mission-deco" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+   440→   440→            <circle cx="100" cy="100" r="86" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+   441→   441→            <circle cx="100" cy="100" r="62" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-dasharray="4 7"/>
+   442→   442→            <circle cx="100" cy="100" r="38" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+   443→   443→          </svg>
+   444→   444→          <p class="eyebrow eyebrow-light">Our mission</p>
+   445→   445→          <h2>
+   446→   446→            A future where every watt is clean, every product cycles,
+   447→   447→            and every byte of knowledge is shared.
+   448→   448→          </h2>
+   449→   449→          <p class="mission-copy">
+   450→   450→            By 2040 we aim to map 1,000 scalable climate solutions and connect the people
+   451→   451→            who can deploy them &mdash; students, mayors, engineers and founders &mdash; with the
+   452→   452→            rigorous science to back their choices. Not someday. Starting now, one
+   453→   453→            breakthrough at a time.
+   454→   454→          </p>
+   455→   455→          <div class="mission-actions">
+   456→   456→            <a href="#subscribe" class="btn btn-light">Read the 2040 roadmap</a>
+   457→   457→            <a href="#pillars" class="btn btn-outline-light">Meet the community</a>
+   458→   458→          </div>
+   459→   459→        </div>
+   460→   460→      </div>
+   461→   461→    </section>
+   462→   462→
+   463→   463→    <!-- ======= NEWSLETTER ======= -->
+   464→   464→    <section class="subscribe section" id="subscribe">
+   465→   465→      <div class="container">
+   466→   466→        <div class="subscribe-card reveal">
+   467→   467→          <div class="subscribe-badge" aria-hidden="true">
+   468→   468→            <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
+   469→   469→              <rect x="6" y="10" width="36" height="28" rx="6" stroke="#047857" stroke-width="2.4"/>
+   470→   470→              <path d="m8 14 16 12 16-12" stroke="#047857" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+   471→   471→            </svg>
+   472→   472→          </div>
+   473→   473→          <h2>The Tomorrow Brief</h2>
+   474→   474→          <p class="subscribe-sub">
+   475→   475→            One email, every Sunday. Three breakthroughs, zero jargon, five minutes to
+   476→   476→            read. Join 24,000 curious minds building a planet-friendly tomorrow.
+   477→   477→          </p>
+   478→   478→          <form class="subscribe-form" id="subscribe-form" novalidate>
+   479→   479→            <label class="sr-only" for="email">Email address</label>
+   480→   480→            <input type="email" id="email" name="email" placeholder="you@tomorrow.earth" autocomplete="email" required />
+   481→   481→            <button type="submit" class="btn btn-primary">Subscribe</button>
+   482→   482→          </form>
+   483→   483→          <p class="form-note">No spam, no noise. Unsubscribe anytime with one click.</p>
+   484→   484→          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+   485→   485→        </div>
+   486→   486→      </div>
+   487→   487→    </section>
+   488→   488→  </main>
+   489→   489→
+   490→   490→  <!-- ======= FOOTER ======= -->
+   491→   491→  <footer class="site-footer">
+   492→   492→    <div class="container">
+   493→   493→      <div class="footer-grid">
+   494→   494→        <div class="footer-brand">
+   495→   495→          <a class="brand brand-footer" href="#home" aria-label="Visual Reality home">
+   496→   496→            <svg class="logo-mark" width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+   497→   497→              <defs>
+   498→   498→                <linearGradient id="lgBadgeF" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+   499→   499→                  <stop stop-color="#34d399"/>
+   500→   500→                  <stop offset="1" stop-color="#2dd4bf"/>
+   501→   501→                </linearGradient>
+   502→   502→              </defs>
+   503→   503→              <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#lgBadgeF)"/>
+   504→   504→              <path d="M13.5 34.5C13.5 22.5 22.5 13.5 34.5 13.5C34.5 25.5 25.5 34.5 13.5 34.5Z" fill="#06281d" fill-opacity="0.9"/>
+   505→   505→              <path d="M17 31C21.5 26.5 27 21 31.5 16.5" stroke="#a7f3d0" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+   506→   506→              <path d="M21.8 26.2V22.4" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round"/>
+   507→   507→              <circle cx="21.8" cy="20.9" r="1.5" fill="#a7f3d0"/>
+   508→   508→              <path d="M26.5 21.5H30" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round"/>
+   509→   509→              <circle cx="31.6" cy="21.5" r="1.5" fill="#a7f3d0"/>
+   510→   510→            </svg>
+   511→   511→            <span class="brand-name">Visual <em>Reality</em></span>
+   512→   512→          </a>
+   513→   513→          <p class="footer-blurb">
+   514→   514→            Tech for tomorrow &mdash; science, innovation and sustainability,
+   515→   515→            minus the jargon. Made for everyone who wants to leave the
+   516→   516→            campsite better than they found it.
+   517→   517→          </p>
+   518→   518→        </div>
+   519→   519→
+   520→   520→        <nav class="footer-col" aria-label="Explore">
+   521→   521→          <h3>Explore</h3>
+   522→   522→          <ul>
+   523→   523→            <li><a href="#home">Home</a></li>
+   524→   524→            <li><a href="#pillars">Pillars</a></li>
+   525→   525→            <li><a href="#innovations">Innovations</a></li>
+   526→   526→            <li><a href="#mission">Mission</a></li>
+   527→   527→            <li><a href="city.html">City Simulator</a></li>
+   528→   528→          </ul>
+   529→   529→        </nav>
+   530→   530→
+   531→   531→        <nav class="footer-col" aria-label="Topics">
+   532→   532→          <h3>Topics</h3>
+   533→   533→          <ul>
+   534→   534→            <li><a href="#innovations">Clean energy</a></li>
+   535→   535→            <li><a href="#innovations">Climate AI</a></li>
+   536→   536→            <li><a href="#innovations">Circular design</a></li>
+   537→   537→            <li><a href="#innovations">Water tech</a></li>
+   538→   538→          </ul>
+   539→   539→        </nav>
+   540→   540→
+   541→   541→        <div class="footer-col" aria-label="Contact">
+   542→   542→          <h3>Say hello</h3>
+   543→   543→          <ul>
+   544→   544→            <li><a href="mailto:hello@visualreality.earth">hello@visualreality.earth</a></li>
+   545→   545→            <li>Somewhere sunny, Planet Earth</li>
+   546→   546→          </ul>
+   547→   547→          <div class="social-row">
+   548→   548→            <a href="#home" class="social-link" aria-label="Visual Reality on the web">
+   549→   549→              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.5 4 5.6 4 9s-1.4 6.5-4 9c-2.6-2.5-4-5.6-4-9s1.4-6.5 4-9Z" stroke="currentColor" stroke-width="1.8"/></svg>
+   550→   550→            </a>
+   551→   551→            <a href="mailto:hello@visualreality.earth" class="social-link" aria-label="Email Visual Reality">
+   552→   552→              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   553→   553→            </a>
+   554→   554→            <a href="#subscribe" class="social-link" aria-label="Visual Reality newsletter">
+   555→   555→              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19V11M12 19V5M19 19v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+   556→   556→            </a>
+   557→   557→          </div>
+   558→   558→        </div>
+   559→   559→      </div>
+   560→   560→
+   561→   561→      <div class="footer-bottom">
+   562→   562→        <p>&copy; <span id="year">2026</span> Visual Reality. All rights reserved.</p>
+   563→   563→        <p>Built with plain HTML, CSS &amp; JavaScript &mdash; like the good old web, just greener.</p>
+   564→   564→      </div>
+   565→   565→    </div>
+   566→   566→  </footer>
+   567→   567→
+   568→   568→  <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+   569→   569→    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   570→   570→  </button>
+   571→   571→
+   572→   572→  <script src="script.js"></script>
+   573→   573→</body>
+   574→   574→</html>
+   575→   575→
