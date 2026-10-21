@@ -1,5 +1,5 @@
 /* ============================================================
-   NovaTerra — script.js
+   Visual Reality — script.js
    Mobile nav · scroll state · reveals · counters · newsletter
    ============================================================ */
 (function () {

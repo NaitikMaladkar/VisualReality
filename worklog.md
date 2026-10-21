@@ -22,3 +22,19 @@ Stage Summary:
 - Preview serves it at "/" via next.config.ts rewrite; page.tsx is a redirect fallback
 - Brand established: NovaTerra + leaf-circuit logo (reusable for future pages)
 - Screenshots of verification saved under scripts/verify-*.png
+
+---
+Task ID: 2
+Agent: main (Z.ai)
+Task: Rebrand site from "NovaTerra" to "Visual Reality" (keep logo, layout, content ideas unchanged)
+
+Work Log:
+- Renamed brand across public/index.html: title, meta description, logo aria-label, header/footer wordmarks (Visual <em>Reality</em>), hero lead copy, stats aria-label, footer email (hello@visualreality.earth), social aria-labels, copyright line
+- Updated header comments in styles.css and script.js
+- Verified with grep: zero NovaTerra/novaterra occurrences remain in public/
+- Browser-verified at 1280px and 900px: wordmark fits nav without crowding, footer branding + email correct
+- Replaced download/novaterra-site/ with download/visual-reality-site/ (updated 3 files)
+
+Stage Summary:
+- Site is now "Visual Reality — Tech for Tomorrow"; logo (leaf + circuit), palette, sections and interactions unchanged
+- First MultiEdit partially applied (atomicity issue) — caught via grep sweep, fully resolved
