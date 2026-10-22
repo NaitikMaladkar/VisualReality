@@ -1581,9 +1581,8 @@ button {
   gap: 0.5rem;
 }
 
-/* Links are ALWAYS visible and clickable — the entrance animation only plays
-   on top of the natural state (fill: backwards), so a failed/finished/interrupted
-   animation can never leave them invisible or unresponsive to taps. */
+/* Links are ALWAYS visible and clickable — no entrance animation, no moving
+   targets: taps can never race an in-flight transform or delay. */
 .nav-links a {
   display: flex;
   flex-direction: column;
@@ -1599,26 +1598,8 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-.nav-menu.open .nav-links a {
-  animation: navLinkIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-}
-
-@keyframes navLinkIn {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-}
-
-/* stagger */
-.nav-menu.open .nav-links a:nth-child(1) { animation-delay: 0.02s; }
-.nav-menu.open .nav-links a:nth-child(2) { animation-delay: 0.05s; }
-.nav-menu.open .nav-links a:nth-child(3) { animation-delay: 0.08s; }
-.nav-menu.open .nav-links a:nth-child(4) { animation-delay: 0.11s; }
-.nav-menu.open .nav-links a:nth-child(5) { animation-delay: 0.14s; }
-.nav-menu.open .nav-links a:nth-child(6) { animation-delay: 0.17s; }
-.nav-menu.open .nav-links a:nth-child(7) { animation-delay: 0.2s; }
-.nav-menu.open .nav-links a:nth-child(8) { animation-delay: 0.23s; }
+/* NOTE: no per-link entrance animation on purpose — moving targets race
+   against touch hit-testing; the panel fade/slide is the only motion. */
 
 .nav-links a:hover {
   background: var(--mint);
@@ -1718,6 +1699,112 @@ button {
   }
 }
 
+/* ============================================================
+   Desktop (>= 1024px): proper inline nav bar — no hamburger.
+   The same .nav-menu block renders as a centered row of links
+   between the brand and the CTA. Short labels (.nl-s) replace
+   the long ones; descriptions stay mobile-only.
+   ============================================================ */
+/* short labels only exist for the desktop bar */
+.nav-links a .nl-s {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: none;
+    overflow: visible;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
+  }
+
+  .nav-menu-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0.1rem;
+    width: 100%;
+  }
+
+  .nav-links a {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.42rem 0.55rem;
+    border-radius: 10px;
+  }
+
+  .nav-links a .nl-t,
+  .nav-links a .nl-d {
+    display: none;
+  }
+
+  .nav-links a .nl-s {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    background: var(--mint);
+    border-color: transparent;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .nav-links a:hover .nl-s {
+    color: var(--brand-deep);
+  }
+
+  .nav-links a[aria-current="page"] {
+    background: var(--mint);
+    border-color: rgba(14, 159, 110, 0.28);
+    box-shadow: none;
+  }
+
+  .nav-links a[aria-current="page"] .nl-s {
+    color: var(--brand-deep);
+  }
+
+  .nav-menu-cta {
+    display: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .nav-toggle,
   .nav-toggle-bar,
@@ -1726,7 +1813,11 @@ button {
     transition: none !important;
     animation: none !important;
   }
+}
 
+/* the closed dropdown stays hidden under reduced motion too
+   (desktop inline bar is excluded — it is always visible) */
+@media (max-width: 1023.98px) and (prefers-reduced-motion: reduce) {
   .nav-menu:not(.open) {
     opacity: 0;
     visibility: hidden;
