@@ -42,6 +42,7 @@
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open menu");
     menu.classList.remove("open");
+    document.body.classList.remove("nav-open");
     if (refocus) toggle.focus();
   }
 
@@ -51,6 +52,7 @@
       toggle.setAttribute("aria-expanded", String(!isOpen));
       toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
       menu.classList.toggle("open", !isOpen);
+      document.body.classList.toggle("nav-open", !isOpen);
     });
 
     // Close after tapping a link (navigation proceeds normally)

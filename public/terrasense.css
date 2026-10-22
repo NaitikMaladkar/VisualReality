@@ -140,6 +140,19 @@
   transform: none;
 }
 
+/* CRITICAL: .ts-panel { display:flex } would defeat the [hidden] attribute
+   (author rules beat the UA's [hidden]{display:none}), leaving an invisible
+   opacity-0 panel permanently rendered at z-index 945 — it silently swallowed
+   every tap that landed on it (hamburger menu items, page content). */
+.ts-panel[hidden] {
+  display: none !important;
+}
+
+/* Belt & braces: a closed (or fading-out) panel can never intercept clicks. */
+.ts-panel:not(.open) {
+  pointer-events: none;
+}
+
 /* ---------- Header ---------- */
 .ts-head {
   display: flex;
