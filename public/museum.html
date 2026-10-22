@@ -19,7 +19,7 @@
 
   <header class="site-header" id="top">
     <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Visual Reality home">
+      <a class="brand" href="/" aria-label="Visual Reality home">
         <svg class="logo-mark" width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visual Reality logo — a leaf with circuit veins">
           <defs>
             <linearGradient id="lgBadge" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
@@ -40,8 +40,31 @@
         <span class="brand-name">Visual <em>Reality</em></span>
       </a>
 
-      <a href="index.html#join" class="btn btn-primary btn-sm nav-cta">Join the movement</a>
+      <div class="nav-right">
+        <a href="/#join" class="btn btn-primary btn-sm nav-cta">Join the movement</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
     </nav>
+
+    <div class="nav-menu" id="nav-menu">
+      <div class="container nav-menu-inner">
+        <nav class="nav-links" aria-label="Site pages">
+          <a href="/"><span class="nl-t">Home</span><span class="nl-d">Start here</span></a>
+          <a href="/city"><span class="nl-t">Future City</span><span class="nl-d">Build a 2060 city</span></a>
+          <a href="/timeline"><span class="nl-t">Timeline</span><span class="nl-d">1952 &rarr; today</span></a>
+          <a href="/carbon"><span class="nl-t">Carbon Calculator</span><span class="nl-d">Measure your footprint</span></a>
+          <a href="/museum"><span class="nl-t">Green Tech Museum</span><span class="nl-d">Walk the halls</span></a>
+          <a href="/impact"><span class="nl-t">Impact Simulator</span><span class="nl-d">What-if the world</span></a>
+          <a href="/challenge"><span class="nl-t">Eco Challenge</span><span class="nl-d">Daily green quests</span></a>
+          <a href="/balance"><span class="nl-t">Tech vs Nature</span><span class="nl-d">The balance game</span></a>
+        </nav>
+        <a href="/#join" class="btn btn-primary btn-sm nav-menu-cta">Join the movement</a>
+      </div>
+    </div>
   </header>
 
   <main id="main">
@@ -209,11 +232,11 @@
             </div>
           </div>
           <div class="ms-outro-actions">
-            <a class="btn btn-light" href="impact.html">
+            <a class="btn btn-light" href="/impact">
               Bend the curve yourself
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a class="btn btn-outline-light" href="timeline.html">Flip through the Timeline</a>
+            <a class="btn btn-outline-light" href="/timeline">Flip through the Timeline</a>
           </div>
         </div>
       </div>
@@ -223,7 +246,7 @@
   <footer class="site-footer city-footer">
     <div class="container">
       <div class="city-footer-inner">
-        <a class="brand brand-footer" href="index.html" aria-label="Visual Reality home">
+        <a class="brand brand-footer" href="/" aria-label="Visual Reality home">
           <svg class="logo-mark" width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="lgBadgeF" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
@@ -238,15 +261,15 @@
           <span class="brand-name">Visual <em>Reality</em></span>
         </a>
         <nav class="city-footer-links" aria-label="Footer">
-          <a href="index.html">Home</a>
-          <a href="city.html">City Simulator</a>
-          <a href="timeline.html">Innovation Timeline</a>
-          <a href="carbon.html">Carbon Calculator</a>
-          <a href="museum.html" aria-current="page">Green Tech Museum</a>
-          <a href="impact.html">Impact Simulator</a>
-          <a href="challenge.html">Eco Challenge</a>
-          <a href="balance.html">Tech vs Nature</a>
-          <a href="index.html#join">Join the movement</a>
+          <a href="/">Home</a>
+          <a href="/city">City Simulator</a>
+          <a href="/timeline">Innovation Timeline</a>
+          <a href="/carbon">Carbon Calculator</a>
+          <a href="/museum" aria-current="page">Green Tech Museum</a>
+          <a href="/impact">Impact Simulator</a>
+          <a href="/challenge">Eco Challenge</a>
+          <a href="/balance">Tech vs Nature</a>
+          <a href="/#join">Join the movement</a>
         </nav>
       </div>
       <div class="footer-bottom">

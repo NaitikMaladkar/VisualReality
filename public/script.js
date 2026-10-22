@@ -33,15 +33,16 @@
     });
   }
 
-  /* ---------- Mobile navigation ---------- */
+  /* ---------- Hamburger navigation (all pages) ---------- */
   var toggle = document.querySelector(".nav-toggle");
   var menu = document.getElementById("nav-menu");
 
-  function closeMenu() {
+  function closeMenu(refocus) {
     if (!toggle || !menu) return;
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open menu");
     menu.classList.remove("open");
+    if (refocus) toggle.focus();
   }
 
   if (toggle && menu) {
@@ -52,19 +53,60 @@
       menu.classList.toggle("open", !isOpen);
     });
 
-    // Close after tapping a link (mobile)
+    // Close after tapping a link (navigation proceeds normally)
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) closeMenu();
     });
 
-    // Close with Escape
+    // Close with Escape (return focus to the toggle for keyboard users)
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeMenu();
+      if (
+        e.key === "Escape" &&
+        menu.classList.contains("open")
+      ) {
+        closeMenu(true);
+      }
     });
 
-    // Reset state when resizing back to desktop
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 880) closeMenu();
+    // Close when clicking / tapping outside the header
+    document.addEventListener("pointerdown", function (e) {
+      if (
+        menu.classList.contains("open") &&
+        !e.target.closest(".site-header")
+      ) {
+        closeMenu();
+      }
+    });
+
+    // Reset state when the viewport width changes
+    // (height-only resizes — e.g. mobile URL bar — keep the menu open)
+    var lastW = window.innerWidth;
+    window.addEventListener(
+      "resize",
+      function () {
+        if (window.innerWidth !== lastW) {
+          lastW = window.innerWidth;
+          closeMenu();
+        }
+      },
+      { passive: true }
+    );
+  }
+
+  // Highlight the page we're currently on (clean routes: /, /city, /carbon ...)
+  if (menu) {
+    var here = location.pathname.replace(/\/+$/, "") || "/";
+    Array.prototype.forEach.call(menu.querySelectorAll("a[href]"), function (a) {
+      var target;
+      try {
+        target = new URL(a.href, location.origin).pathname;
+      } catch (err) {
+        return;
+      }
+      target = target.replace(/\/+$/, "") || "/";
+      if (target === here) {
+        a.setAttribute("aria-current", "page");
+      }
     });
   }
 

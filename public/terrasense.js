@@ -14,12 +14,12 @@
   /* ============================================================
      1 · KNOWLEDGE BASE — everything TerraSense knows
      Each topic: { k: keyword list, a: answer, more: follow-up }
-     [[label|page.html]] becomes a real link, **text** becomes bold.
+     [[label|/route]] becomes a real link, **text** becomes bold.
      ============================================================ */
   var KB = [
     {
       k: ["what is this site", "what is visual reality", "about the site", "about visual reality", "this website", "this site", "what is this", "what do you do", "what is this about"],
-      a: "Visual Reality is a home for **Tech for tomorrow — science, innovation and sustainability**. We turn dense climate science into playful, hands-on experiences: a [[Future City Simulator|city.html]], an [[Innovation Timeline|timeline.html]], a [[Carbon Calculator|carbon.html]], a walkable [[Green Tech Museum|museum.html]], an [[Impact Simulator|impact.html]] and two learning games. Where would you like to start?"
+      a: "Visual Reality is a home for **Tech for tomorrow — science, innovation and sustainability**. We turn dense climate science into playful, hands-on experiences: a [[Future City Simulator|/city]], an [[Innovation Timeline|/timeline]], a [[Carbon Calculator|/carbon]], a walkable [[Green Tech Museum|/museum]], an [[Impact Simulator|/impact]] and two learning games. Where would you like to start?"
     },
     {
       k: ["tech for tomorrow", "theme", "topic of"],
@@ -27,75 +27,75 @@
     },
     {
       k: ["how many pages", "how many features", "what can i explore", "everything on this site", "site map", "list of pages", "what is there to do", "all the pages"],
-      a: "Seven interactive experiences await: the [[City Simulator|city.html]] (fast-forward a city to 2060), the [[Innovation Timeline|timeline.html]] (1952→today), the [[Carbon Calculator|carbon.html]] (your live footprint), the [[Green Tech Museum|museum.html]] (four 3D halls), the [[Impact Simulator|impact.html]] (country-level climate what-ifs), the [[Eco Challenge|challenge.html]] (daily quests & badges) and [[Tech vs Nature|balance.html]] (the balancing game). Plus me, of course ✦"
+      a: "Seven interactive experiences await: the [[City Simulator|/city]] (fast-forward a city to 2060), the [[Innovation Timeline|/timeline]] (1952→today), the [[Carbon Calculator|/carbon]] (your live footprint), the [[Green Tech Museum|/museum]] (four 3D halls), the [[Impact Simulator|/impact]] (country-level climate what-ifs), the [[Eco Challenge|/challenge]] (daily quests & badges) and [[Tech vs Nature|/balance]] (the balancing game). Plus me, of course ✦"
     },
     {
       k: ["solar", "photovoltaic", " pv ", "solar panel", "sun power", "solar energy"],
-      a: "Solar is the quiet revolution of our century — the IEA called it **the cheapest electricity in history**. Module costs fell about 90% in a decade, and in our [[Impact Simulator|impact.html]] you can push a country to 50% solar and watch the tonnes of CO₂ disappear in real time. Fun fact from our [[Timeline|timeline.html]]: the first practical silicon cell in 1954 was ~6% efficient; today's lab cells pass 47%."
+      a: "Solar is the quiet revolution of our century — the IEA called it **the cheapest electricity in history**. Module costs fell about 90% in a decade, and in our [[Impact Simulator|/impact]] you can push a country to 50% solar and watch the tonnes of CO₂ disappear in real time. Fun fact from our [[Timeline|/timeline]]: the first practical silicon cell in 1954 was ~6% efficient; today's lab cells pass 47%."
     },
     {
       k: ["wind power", "wind turbine", "wind energy", "offshore wind"],
-      a: "Wind now supplies roughly **10% of the world's electricity**, and the newest offshore turbines sweep a circle taller than the Eiffel Tower — one rotation can power a home for two days. Life-cycle analysis says a turbine pays back its build carbon in under a year, then serves 20–25 years of clean energy. Our [[City Simulator|city.html]] lets you fund turbine upgrades and watch the smog gauge respond."
+      a: "Wind now supplies roughly **10% of the world's electricity**, and the newest offshore turbines sweep a circle taller than the Eiffel Tower — one rotation can power a home for two days. Life-cycle analysis says a turbine pays back its build carbon in under a year, then serves 20–25 years of clean energy. Our [[City Simulator|/city]] lets you fund turbine upgrades and watch the smog gauge respond."
     },
     {
       k: ["hydro", "hydroelectric", "hydro power", "tidal", "wave energy"],
-      a: "Hydropower is the grandparent of clean electricity — about **14% of global generation** — and it still stores more energy than every battery on Earth combined (pumped hydro). The frontier is now tidal and wave energy: predictable, dense, and finally reaching commercial arrays. You'll find record-breaking stats in our [[Green Tech Museum|museum.html]] hydro hall."
+      a: "Hydropower is the grandparent of clean electricity — about **14% of global generation** — and it still stores more energy than every battery on Earth combined (pumped hydro). The frontier is now tidal and wave energy: predictable, dense, and finally reaching commercial arrays. You'll find record-breaking stats in our [[Green Tech Museum|/museum]] hydro hall."
     },
     {
       k: ["fusion", "net energy gain", "tokamak", "iter", "nif"],
-      a: "Fusion had its Wright-brothers moment in **December 2022**: the National Ignition Facility got more energy out of a fusion shot than the laser put in — the first net-energy gain ever. It's still decades from your wall socket, but the physics milestone is real. The full story lives in our [[Innovation Timeline|timeline.html]]."
+      a: "Fusion had its Wright-brothers moment in **December 2022**: the National Ignition Facility got more energy out of a fusion shot than the laser put in — the first net-energy gain ever. It's still decades from your wall socket, but the physics milestone is real. The full story lives in our [[Innovation Timeline|/timeline]]."
     },
     {
       k: ["battery", "batteries", "storage", "grid scale", "microgrid", "power grid"],
-      a: "Batteries are the missing puzzle piece falling into place: lithium-ion pack prices fell ~90% since 2010, and grid-scale storage is now the fastest-growing power technology on the planet. Pair cheap solar + storage and you get microgrids that keep neighbourhoods powered through blackouts — the kind of system you can experiment with in our [[City Simulator|city.html]]."
+      a: "Batteries are the missing puzzle piece falling into place: lithium-ion pack prices fell ~90% since 2010, and grid-scale storage is now the fastest-growing power technology on the planet. Pair cheap solar + storage and you get microgrids that keep neighbourhoods powered through blackouts — the kind of system you can experiment with in our [[City Simulator|/city]]."
     },
     {
       k: ["ev", "electric vehicle", "electric car", "electric cars"],
-      a: "Electric vehicles went from 1-in-25 new cars in 2020 to roughly **1-in-5 in 2024**. An EV on today's average grid already saves about half the lifetime emissions of a petrol car — and as the grid gets greener, every EV gets greener too, automatically. Try the EV lever in our [[Impact Simulator|impact.html]] and watch traffic turn emerald."
+      a: "Electric vehicles went from 1-in-25 new cars in 2020 to roughly **1-in-5 in 2024**. An EV on today's average grid already saves about half the lifetime emissions of a petrol car — and as the grid gets greener, every EV gets greener too, automatically. Try the EV lever in our [[Impact Simulator|/impact]] and watch traffic turn emerald."
     },
     {
       k: ["heat pump", "heating", "home heating", "boiler"],
-      a: "Heat pumps are magic-adjacent: they move heat instead of making it, delivering 3–4 units of warmth per unit of electricity. Swapping a gas boiler cuts home heating emissions by half or more, depending on your grid. Our [[Carbon Calculator|carbon.html]] includes a retrofit lever so you can see the exact tonnes you'd save."
+      a: "Heat pumps are magic-adjacent: they move heat instead of making it, delivering 3–4 units of warmth per unit of electricity. Swapping a gas boiler cuts home heating emissions by half or more, depending on your grid. Our [[Carbon Calculator|/carbon]] includes a retrofit lever so you can see the exact tonnes you'd save."
     },
     {
       k: ["climate ai", "ai for climate", "machine learning", "artificial intelligence", "weather forecasting", "predict flood", "predict drought"],
-      a: "AI is climate science's new telescope: models that fuse satellite and ground sensors can now flag floods, droughts and heatwaves **weeks earlier** than traditional methods — vital lead time for farmers, insurers and cities. That same family of ideas inspires this site's namesake. For the big picture, visit our [[Impact Simulator|impact.html]]."
+      a: "AI is climate science's new telescope: models that fuse satellite and ground sensors can now flag floods, droughts and heatwaves **weeks earlier** than traditional methods — vital lead time for farmers, insurers and cities. That same family of ideas inspires this site's namesake. For the big picture, visit our [[Impact Simulator|/impact]]."
     },
     {
       k: ["carbon calculator", "footprint calculator", "count my carbon", "carbon page"],
-      a: "The [[Carbon Calculator|carbon.html]] asks twelve honest questions — travel, home, food, shopping — and builds your live dashboard: yearly tonnes, a comparison with the world average, and a green-tech game plan ranked by tonnes saved. No email, no account; everything computes in your browser."
+      a: "The [[Carbon Calculator|/carbon]] asks twelve honest questions — travel, home, food, shopping — and builds your live dashboard: yearly tonnes, a comparison with the world average, and a green-tech game plan ranked by tonnes saved. No email, no account; everything computes in your browser."
     },
     {
       k: ["reduce my carbon", "cut my carbon", "lower my footprint", "shrink my footprint", "be more sustainable", "eco friendly tips", "green tips", "live sustainably", "help the planet", "save the planet"],
-      a: "The biggest levers, roughly in order: ✦ how you travel (flight-free years, EV, rail) ✦ how you heat (heat pumps, insulation) ✦ how you eat (more plants, less waste) ✦ how long you keep things (repair > replace). Our [[Eco Challenge|challenge.html]] turns these into a daily-streak game, and the [[Carbon Calculator|carbon.html]] ranks them by *your* numbers."
+      a: "The biggest levers, roughly in order: ✦ how you travel (flight-free years, EV, rail) ✦ how you heat (heat pumps, insulation) ✦ how you eat (more plants, less waste) ✦ how long you keep things (repair > replace). Our [[Eco Challenge|/challenge]] turns these into a daily-streak game, and the [[Carbon Calculator|/carbon]] ranks them by *your* numbers."
     },
     {
       k: ["city simulator", "city sim", "future city", "smart city", "2060"],
-      a: "The [[Future City Simulator|city.html]] hands you the keys to a living block: jump from 2026 to 2060, tap buildings to explore solar skins, green roofs and smart lighting, then fund the upgrades that clear the smog gauge. It runs a full day–night cycle so you can watch the city's energy dance."
+      a: "The [[Future City Simulator|/city]] hands you the keys to a living block: jump from 2026 to 2060, tap buildings to explore solar skins, green roofs and smart lighting, then fund the upgrades that clear the smog gauge. It runs a full day–night cycle so you can watch the city's energy dance."
     },
     {
       k: ["timeline", "innovation timeline", "history", "milestone", "1952"],
-      a: "The [[Innovation Timeline|timeline.html]] is seventy years of saving tomorrow: from the first silicon solar cell (~6% efficient, 1954) through wind farms, EVs and lithium batteries to fusion's 2022 net-energy gain. Flip the deck and watch efficiency curves climb."
+      a: "The [[Innovation Timeline|/timeline]] is seventy years of saving tomorrow: from the first silicon solar cell (~6% efficient, 1954) through wind farms, EVs and lithium batteries to fusion's 2022 net-energy gain. Flip the deck and watch efficiency curves climb."
     },
     {
       k: ["museum", "green tech museum", "exhibit", "gallery", "halls"],
-      a: "Our [[Green Tech Museum|museum.html]] is a 3D gallery built from pure CSS — no WebGL. Four halls (Solar, Wind, Hydro and AI) hold twelve animated exhibits; walk with arrow keys, click any plinth and it animates its own explanation. Don't miss the record-breaking stats scattered around."
+      a: "Our [[Green Tech Museum|/museum]] is a 3D gallery built from pure CSS — no WebGL. Four halls (Solar, Wind, Hydro and AI) hold twelve animated exhibits; walk with arrow keys, click any plinth and it animates its own explanation. Don't miss the record-breaking stats scattered around."
     },
     {
       k: ["impact simulator", "impact page", "what if", "adoption", "country", "simulat"],
-      a: "The [[Impact Simulator|impact.html]] answers climate what-ifs with honest math on real data: pick one of eight regions, push adoption sliders (solar, wind, EVs, retrofits) and watch emissions fall live — with a before/after landscape that clears its smog as you decarbonise. Presets include *Paris 2035* and *Net-zero 2050*."
+      a: "The [[Impact Simulator|/impact]] answers climate what-ifs with honest math on real data: pick one of eight regions, push adoption sliders (solar, wind, EVs, retrofits) and watch emissions fall live — with a before/after landscape that clears its smog as you decarbonise. Presets include *Paris 2035* and *Net-zero 2050*."
     },
     {
       k: ["eco challenge", "challenge page", "daily quest", "streak", "badge"],
-      a: "The [[Eco Challenge|challenge.html]] turns planet-saving into a habit game: three fresh quests every day, streak tracking, points, and eight badges to unlock. Quests come with sourced facts (UNEP, IEA, FAO…), and your progress is stored privately on your device."
+      a: "The [[Eco Challenge|/challenge]] turns planet-saving into a habit game: three fresh quests every day, streak tracking, points, and eight badges to unlock. Quests come with sourced facts (UNEP, IEA, FAO…), and your progress is stored privately on your device."
     },
     {
       k: ["tech vs nature", "balance game", "balance page", "drag", "trade-off", "trade off"],
-      a: "[[Tech vs Nature|balance.html]] is a 10-round balancing act: drag each proposal into *Build* or *Protect* and watch the industry/nature meters swing. Every decision comes with a real-world trade-off note, and the ending you earn — Harmony or Boomtown Blues — depends on your judgement."
+      a: "[[Tech vs Nature|/balance]] is a 10-round balancing act: drag each proposal into *Build* or *Protect* and watch the industry/nature meters swing. Every decision comes with a real-world trade-off note, and the ending you earn — Harmony or Boomtown Blues — depends on your judgement."
     },
     {
       k: ["games", "game", "play something", "play a game", "fun"],
-      a: "Two games are open all night: the [[Eco Challenge|challenge.html]] (daily eco-habit quests with badges and confetti) and [[Tech vs Nature|balance.html]] (a drag-and-drop balancing act with live meters). Both teach real, sourced sustainability — no wrong answers, just consequences ✦"
+      a: "Two games are open all night: the [[Eco Challenge|/challenge]] (daily eco-habit quests with badges and confetti) and [[Tech vs Nature|/balance]] (a drag-and-drop balancing act with live meters). Both teach real, sourced sustainability — no wrong answers, just consequences ✦"
     },
     {
       k: ["wizard", "ecoverius", "druid", "the character", "hero character", "voice", "talks"],
@@ -103,27 +103,27 @@
     },
     {
       k: ["join the movement", "join", "share my idea", "share an idea", "submit an idea", "send my idea", "my idea", "ideas", "contribute", "get involved", "be part", "take part"],
-      a: "The movement is open ✦ Scroll to the **Join the movement** section at the bottom of the [[homepage|index.html]] and send your idea — an invention, a climate app, a city hack, a wild what-if. Ideas of every size are welcome, and they all help build a planet-friendly tomorrow."
+      a: "The movement is open ✦ Scroll to the **Join the movement** section at the bottom of the [[homepage|/]] and send your idea — an invention, a climate app, a city hack, a wild what-if. Ideas of every size are welcome, and they all help build a planet-friendly tomorrow."
     },
     {
       k: ["newsletter", "tomorrow brief", "subscribe", "email list", "mailing list"],
-      a: "We retired the old newsletter for something better: **Join the movement** — a section at the bottom of the [[homepage|index.html]] where you can send your own ideas straight to the team. Much more fun than another inbox visitor."
+      a: "We retired the old newsletter for something better: **Join the movement** — a section at the bottom of the [[homepage|/]] where you can send your own ideas straight to the team. Much more fun than another inbox visitor."
     },
     {
       k: ["mission", "2040", "roadmap", "vision", "1,000", "goal of"],
-      a: "Our mission: by **2040**, map 1,000 scalable climate solutions and connect the people who can deploy them — students, mayors, engineers, founders — with the rigorous science to back their choices. The full roadmap is on the [[homepage|index.html]] mission panel."
+      a: "Our mission: by **2040**, map 1,000 scalable climate solutions and connect the people who can deploy them — students, mayors, engineers, founders — with the rigorous science to back their choices. The full roadmap is on the [[homepage|/]] mission panel."
     },
     {
       k: ["net zero", "net-zero", "decarboni", "emissions target", "carbon neutral"],
-      a: "**Net zero** means the greenhouse gases we emit are balanced by the ones we remove — the world aims for mid-century, we aim our operations at **2040**. It isn't emission *ignoring*: the math only works if gross emissions fall fast first. Model pathways in the [[Impact Simulator|impact.html]]."
+      a: "**Net zero** means the greenhouse gases we emit are balanced by the ones we remove — the world aims for mid-century, we aim our operations at **2040**. It isn't emission *ignoring*: the math only works if gross emissions fall fast first. Model pathways in the [[Impact Simulator|/impact]]."
     },
     {
       k: ["global emissions", "how much co2", "co2 emissions", "greenhouse gas emissions", "37.4"],
-      a: "Humanity emitted about **37.4 Gt of CO₂ in 2024** — a record, but one with a twist: clean energy is now growing faster than demand in leading economies, bending the curve. See what bending it fully would take in the [[Impact Simulator|impact.html]]."
+      a: "Humanity emitted about **37.4 Gt of CO₂ in 2024** — a record, but one with a twist: clean energy is now growing faster than demand in leading economies, bending the curve. See what bending it fully would take in the [[Impact Simulator|/impact]]."
     },
     {
       k: ["renewable growth", "renewables added", "1.6 tw", "how fast is solar growing", "clean energy growth"],
-      a: "In 2024 the world added roughly **1.6 TW of renewable capacity** — think of it as a second industrial revolution, in fast-forward. Solar leads, wind follows, and storage now tags along everywhere. Our [[Innovation Timeline|timeline.html]] charts the whole climb."
+      a: "In 2024 the world added roughly **1.6 TW of renewable capacity** — think of it as a second industrial revolution, in fast-forward. Solar leads, wind follows, and storage now tags along everywhere. Our [[Innovation Timeline|/timeline]] charts the whole climb."
     },
     {
       k: ["paris agreement", "1.5 degrees", "1.5°c", "warming target", "temperature goal", "global warming target"],
@@ -131,7 +131,7 @@
     },
     {
       k: ["circular", "recycl", "compost", "biodegradable", "plastic", "waste"],
-      a: "A circular economy designs waste out entirely: products become nutrients — compostable packaging, textiles that return to soil, electronics that disassemble. Recycling is the floor, not the ceiling. Our pillars section on the [[homepage|index.html]] has the full philosophy."
+      a: "A circular economy designs waste out entirely: products become nutrients — compostable packaging, textiles that return to soil, electronics that disassemble. Recycling is the floor, not the ceiling. Our pillars section on the [[homepage|/]] has the full philosophy."
     },
     {
       k: ["water tech", "drinking water", "desalination", "water scarcity", "water from air"],
@@ -147,11 +147,11 @@
     },
     {
       k: ["biodiversity", "wildlife", "forest", "deforestation", "trees", "ocean", "reef"],
-      a: "Climate and biodiversity are one crisis with two faces: forests and oceans absorb about half our fossil CO₂, so protecting them *is* decarbonisation. The [[Tech vs Nature|balance.html]] game lets you feel that tension — every build decision shadows a habitat."
+      a: "Climate and biodiversity are one crisis with two faces: forests and oceans absorb about half our fossil CO₂, so protecting them *is* decarbonisation. The [[Tech vs Nature|/balance]] game lets you feel that tension — every build decision shadows a habitat."
     },
     {
       k: ["career", "job", "study", "green skills", "work in sustainability", "learn climate"],
-      a: "Green is the fastest-growing job market on Earth — the ILO projects **25 million new roles by 2030**. Skills in demand: energy systems, climate data (like the AI this site is named after), circular design and climate finance. Start with our [[Timeline|timeline.html]] to learn the landscape, then specialise."
+      a: "Green is the fastest-growing job market on Earth — the ILO projects **25 million new roles by 2030**. Skills in demand: energy systems, climate data (like the AI this site is named after), circular design and climate finance. Start with our [[Timeline|/timeline]] to learn the landscape, then specialise."
     },
     {
       k: ["terrasense", "who are you", "what are you", "your name", "chatbot", "assistant", "are you real", "are you ai", "real ai", "about you", "about yourself"],
@@ -163,15 +163,15 @@
     },
     {
       k: ["contact", "email", "reach you", "get in touch", "hello@"],
-      a: "Three doors, all open ✦ Email **hello@visualreality.earth** · Call or message the creator, **Naitik Maladkar**, at **7821838270** · Find him on GitHub as **NaitikMaladkar**. Or use the [[Join the movement|index.html#join]] box on the homepage — it's the fastest route for ideas."
+      a: "Three doors, all open ✦ Email **hello@visualreality.earth** · Call or message the creator, **Naitik Maladkar**, at **7821838270** · Find him on GitHub as **NaitikMaladkar**. Or use the [[Join the movement|/#join]] box on the homepage — it's the fastest route for ideas."
     },
     {
       k: ["phone", "phone number", "call", "mobile number", "contact number", "whatsapp", "7821838270", "ring him", "give him a call"],
-      a: "You can reach **Naitik Maladkar**, the creator of Visual Reality, directly at **7821838270** — call or message. For ideas and collaborations, the [[Join the movement|index.html#join]] section on the homepage works too ✦"
+      a: "You can reach **Naitik Maladkar**, the creator of Visual Reality, directly at **7821838270** — call or message. For ideas and collaborations, the [[Join the movement|/#join]] section on the homepage works too ✦"
     },
     {
       k: ["climate change", "global warming", "climate crisis"],
-      a: "The science in one breath: burning fossil fuels adds ~37.4 Gt of CO₂ a year; the extra heat is already melting ice, lifting seas and intensifying storms — but the same decade that broke the record built the tools to fix it. Solar became history's cheapest energy, EVs hit 1-in-5 sales, and net-zero pledges cover 90% of GDP. Optimism, backed by math — that's the Visual Reality way. Dive into the [[Impact Simulator|impact.html]] to run the numbers yourself."
+      a: "The science in one breath: burning fossil fuels adds ~37.4 Gt of CO₂ a year; the extra heat is already melting ice, lifting seas and intensifying storms — but the same decade that broke the record built the tools to fix it. Solar became history's cheapest energy, EVs hit 1-in-5 sales, and net-zero pledges cover 90% of GDP. Optimism, backed by math — that's the Visual Reality way. Dive into the [[Impact Simulator|/impact]] to run the numbers yourself."
     }
   ];
 
@@ -181,7 +181,7 @@
     "wind": "More wind whispers: a single modern offshore turbine can power ~20,000 homes, and recycled turbine blades are becoming skateboards and bridges. Repowering old sites with bigger rotors can triple output without new land.",
     "fusion": "More fusion fuel: over 30 private fusion companies have raised billions since 2021, and the new milestone to watch is *repeated* net gain — ignition is a flare, a power plant needs a fireplace.",
     "ev": "More EV volts: battery prices passed the magic $100/kWh line, used-EV markets are blossoming, and the charging network doubled in three years. The cleanest EV is the one charged on a sunny afternoon.",
-    "city simulator": "Insider tip for the [[City Simulator|city.html]]: fund the tram line *before* the big solar farm — transport choices unlock bigger smog wins, and the night cycle is the prettiest time to check your work.",
+    "city simulator": "Insider tip for the [[City Simulator|/city]]: fund the tram line *before* the big solar farm — transport choices unlock bigger smog wins, and the night cycle is the prettiest time to check your work.",
     "carbon calculator": "Calculator secret: your biggest lever usually hides in one of the first three questions — most people find flights or heating outweigh every lightbulb they'll ever switch. Small print, big tonnes."
   };
 
