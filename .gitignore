@@ -59,3 +59,8 @@ server.log
 /db/
 scripts/*.png
 scripts/*.jpg
+
+# sandbox infra
+.zscripts/
+mini-services/
+*.pid
