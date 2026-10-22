@@ -1329,7 +1329,27 @@ button {
   border-color: rgba(217, 119, 6, 0.22);
 }
 
-/* Nav breathing room now that it carries up to eight links */
+/* Games promo banner variant (amber-to-green tinted, dual CTA) */
+.play-banner-inner {
+  background: linear-gradient(120deg, #fdf3e0 0%, #e4f8ee 100%);
+  border-color: rgba(217, 119, 6, 0.24);
+}
+
+.play-banner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: none;
+}
+
+@media (max-width: 720px) {
+  .play-banner-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* Nav breathing room now that every page carries eight links */
 @media (max-width: 1160px) and (min-width: 881px) {
   .nav-menu {
     gap: 1.1rem;
@@ -1345,6 +1365,13 @@ button {
 
   .nav-cta {
     padding-inline: 0.95rem;
+  }
+}
+
+/* Guarantee the eight links fit on narrow desktops */
+@media (max-width: 985px) and (min-width: 881px) {
+  .nav-cta {
+    display: none;
   }
 }
 
