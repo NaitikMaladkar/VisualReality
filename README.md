@@ -17,7 +17,7 @@
 | ⚖️ Tech vs Nature | `/balance` | A 10-round drag-and-drop balancing game with live feedback meters |
 | ✦ TerraSense AI | every page | On-device science copilot — answers site + green-tech questions, deflects code questions, credits the maker |
 
-Plus: a cinematic brand intro, Ecoverius the eco-wizard (text-to-speech, Web Speech API), a scrolling science ticker, and a site-wide motion layer (ripples, 3D tilt, draw-in icons) — all `prefers-reduced-motion` aware.
+Plus: a cinematic brand intro, Ecoverius the eco-wizard (deep-voiced text-to-speech, Web Speech API), a scrolling science ticker, a **Join the movement** idea box, and a site-wide motion layer (ripples, 3D tilt, draw-in icons) — all `prefers-reduced-motion` aware.
 
 ## Running locally
 
@@ -40,3 +40,6 @@ Routes like `/city`, `/impact`… are rewrites to the static HTML in `public/`.
 ## Credits
 
 Every page, game, simulation and animation was designed and built by **Naitik Maladkar**.
+
+- GitHub: [github.com/NaitikMaladkar](https://github.com/NaitikMaladkar)
+- Phone: [7821838270](tel:+917821838270)

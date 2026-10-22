@@ -102,8 +102,12 @@
       a: "That's **Ecoverius**, our eco-wizard — he lives in the homepage banner and greets every visitor out loud (text-to-speech, still on-device). Click him for spoken Earth-protection tips; the mute button keeps him quiet if you prefer reading."
     },
     {
+      k: ["join the movement", "join", "share my idea", "share an idea", "submit an idea", "send my idea", "my idea", "ideas", "contribute", "get involved", "be part", "take part"],
+      a: "The movement is open ✦ Scroll to the **Join the movement** section at the bottom of the [[homepage|index.html]] and send your idea — an invention, a climate app, a city hack, a wild what-if. Ideas of every size are welcome, and they all help build a planet-friendly tomorrow."
+    },
+    {
       k: ["newsletter", "tomorrow brief", "subscribe", "email list", "mailing list"],
-      a: "The **Tomorrow Brief** is our Sunday newsletter: three breakthroughs, zero jargon, five minutes to read — free forever. The signup box lives at the bottom of the [[homepage|index.html]]. 24,000 curious minds already read it with their coffee."
+      a: "We retired the old newsletter for something better: **Join the movement** — a section at the bottom of the [[homepage|index.html]] where you can send your own ideas straight to the team. Much more fun than another inbox visitor."
     },
     {
       k: ["mission", "2040", "roadmap", "vision", "1,000", "goal of"],
@@ -155,11 +159,15 @@
     },
     {
       k: ["free", "cost", "price", "pay", "subscription fee", "money"],
-      a: "Everything on Visual Reality — all seven experiences, the newsletter, and my services — is **free to read and free to use, forever**. No paywalls, no accounts, no data harvested. That's a deliberate part of the mission."
+      a: "Everything on Visual Reality — all seven experiences, my services, and the **Join the movement** idea box — is **free to read and free to use, forever**. No paywalls, no accounts, no data harvested. That's a deliberate part of the mission."
     },
     {
       k: ["contact", "email", "reach you", "get in touch", "hello@"],
-      a: "Say hello at **hello@visualreality.earth** — the inbox is watched by actual humans (mostly one). For collaboration ideas, praise for the creator, or bug sightings, that's the door."
+      a: "Three doors, all open ✦ Email **hello@visualreality.earth** · Call or message the creator, **Naitik Maladkar**, at **7821838270** · Find him on GitHub as **NaitikMaladkar**. Or use the [[Join the movement|index.html#join]] box on the homepage — it's the fastest route for ideas."
+    },
+    {
+      k: ["phone", "phone number", "call", "mobile number", "contact number", "whatsapp", "7821838270", "ring him", "give him a call"],
+      a: "You can reach **Naitik Maladkar**, the creator of Visual Reality, directly at **7821838270** — call or message. For ideas and collaborations, the [[Join the movement|index.html#join]] section on the homepage works too ✦"
     },
     {
       k: ["climate change", "global warming", "climate crisis"],
@@ -178,6 +186,8 @@
   };
 
   var CREATOR_RE = /\b(naitik|maladkar)\b|\b(who|whom)\s+(made|makes|created|creates|built|builds|designed|developed|develops|coded|founded|owns|wrote|invented)\s+(all|everything|this|the site|the website|visual reality|it all|all of (this|it)|every(thin)?g|you)\b|\b(creator|founder|developer|maker|author|owner)\s+(of|behind)\b|\bwho\s+(did|does)\s+(all|everything|this)\b/;
+  var GH_PROFILE_RE = /github/;
+  var GH_CONTEXT_RE = /\b(naitik|maladkar|creator|founder|developer|his|him|he|profile|link|handle|account|follow|yours?)\b/;
   var CODE_RE = /\b(html|css|javascript|js|code|coding|codebase|coder|program|programming|script|scripts|source|repo|github|git|framework|react|vue|angular|svelte|next\s?js|node|npm|backend|frontend|fullstack|database|sql|api|deploy|deployment|hosting|server|stack|tailwind|bootstrap|library|libraries|vscode|ide|tech stack|file structure|source code|open source|programming language|built with|written in)\b|how (is|was) (this|the) (site|website|page) built|what (is|was) (this|the) (site|website|page) built (with|in|from)/;
   var GREET_RE = /^(hi|hii+|hello+|hey+|yo|howdy|greetings|good\s(morning|afternoon|evening)|namaste|sup|hiya|hola)\b/;
   var THANKS_RE = /\b(thanks|thank you|thx|ty|appreciated|appreciate it)\b/;
@@ -209,7 +219,13 @@
     /* --- creator credit beats everything, as designed --- */
     if (CREATOR_RE.test(q)) {
       lastTopic = "creator";
-      return "Every pixel, page, game and animation here — the city, the museum, the games, even my circuits — was imagined and built by **Naitik Maladkar** ✦ He built Visual Reality to prove that climate storytelling can feel like play. Pretty good work, if I do say so myself… and I'm partly his doing.";
+      return "Every pixel, page, game and animation here — the city, the museum, the games, even my circuits — was imagined and built by **Naitik Maladkar** ✦ He built Visual Reality to prove that climate storytelling can feel like play. You'll find him on GitHub as **NaitikMaladkar**, or ring him at **7821838270**.";
+    }
+
+    /* --- GitHub profile requests: point to the creator (still no code talk) --- */
+    if (GH_PROFILE_RE.test(q) && GH_CONTEXT_RE.test(q)) {
+      lastTopic = "creator";
+      return "You'll find the creator, **Naitik Maladkar**, on GitHub as **NaitikMaladkar** — github.com/NaitikMaladkar ✦ That's his home base. Now, shall I show you the science side of the site instead?";
     }
 
     /* --- codebase questions: politely out of scope --- */

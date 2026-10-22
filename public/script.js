@@ -1,6 +1,6 @@
 /* ============================================================
    Visual Reality — script.js
-   Mobile nav · scroll state · reveals · counters · newsletter
+   Scroll state · reveals · counters · Join the movement form
    ============================================================ */
 (function () {
   "use strict";
@@ -179,47 +179,84 @@
     initReveals();
   }
 
-  /* ---------- Newsletter form (client-side demo) ---------- */
-  var form = document.getElementById("subscribe-form");
-  var msg = document.getElementById("form-msg");
-  var emailInput = document.getElementById("email");
+  /* ---------- Join the movement: idea form ---------- */
+  var joinForm = document.getElementById("join-form");
+  var joinCard = document.getElementById("join-card");
+  var joinMsg = document.getElementById("join-msg");
+  var ideaText = document.getElementById("idea-text");
+  var ideaName = document.getElementById("idea-name");
+  var ideaEmail = document.getElementById("idea-email");
+  var joinSend = joinForm ? joinForm.querySelector(".join-send") : null;
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  if (form && msg && emailInput) {
-    form.addEventListener("submit", function (e) {
+  if (joinForm && joinMsg && ideaText) {
+    joinForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var value = emailInput.value.trim();
+      var idea = ideaText.value.trim();
+      var name = ideaName ? ideaName.value.trim() : "";
+      var email = ideaEmail ? ideaEmail.value.trim() : "";
 
-      if (value === "") {
-        msg.textContent = "Please enter your email address first.";
-        msg.className = "form-msg error";
-        emailInput.classList.add("input-error");
-        emailInput.focus();
+      if (idea === "") {
+        joinMsg.textContent = "Don't be shy — type your idea in first. Even half-formed ideas matter!";
+        joinMsg.className = "form-msg error";
+        ideaText.classList.add("input-error");
+        ideaText.focus();
         return;
       }
 
-      if (!EMAIL_RE.test(value)) {
-        msg.textContent =
-          "That doesn't look like a valid email — mind checking it?";
-        msg.className = "form-msg error";
-        emailInput.classList.add("input-error");
-        emailInput.focus();
+      if (idea.length < 12) {
+        joinMsg.textContent =
+          "A few more words, please — tell us a little more so your idea shines.";
+        joinMsg.className = "form-msg error";
+        ideaText.classList.add("input-error");
+        ideaText.focus();
         return;
       }
 
-      emailInput.classList.remove("input-error");
-      msg.textContent =
-        "Welcome aboard, future-builder! Your first Tomorrow Brief lands on Sunday.";
-      msg.className = "form-msg success";
-      form.reset();
+      if (email !== "" && !EMAIL_RE.test(email)) {
+        joinMsg.textContent =
+          "That email doesn't look quite right — mind checking it? (Or leave it blank.)";
+        joinMsg.className = "form-msg error";
+        ideaEmail.classList.add("input-error");
+        ideaEmail.focus();
+        return;
+      }
+
+      ideaText.classList.remove("input-error");
+      if (ideaEmail) ideaEmail.classList.remove("input-error");
+
+      var who = name ? name.split(/\s+/)[0] : "future-builder";
+      joinMsg.textContent =
+        "Thanks, " + who + "! Your idea just joined the movement \u2726 Keep imagining tomorrow \u2014 the planet thanks you.";
+      joinMsg.className = "form-msg success";
+
+      if (joinCard) {
+        joinCard.classList.remove("sent");
+        void joinCard.offsetWidth;
+        joinCard.classList.add("sent");
+      }
+      if (joinSend) {
+        joinSend.classList.add("is-sent");
+        window.setTimeout(function () {
+          joinSend.classList.remove("is-sent");
+        }, 1200);
+      }
+
+      joinForm.reset();
     });
 
-    emailInput.addEventListener("input", function () {
-      emailInput.classList.remove("input-error");
-      msg.textContent = "";
-      msg.className = "form-msg";
+    ideaText.addEventListener("input", function () {
+      ideaText.classList.remove("input-error");
+      joinMsg.textContent = "";
+      joinMsg.className = "form-msg";
     });
+
+    if (ideaEmail) {
+      ideaEmail.addEventListener("input", function () {
+        ideaEmail.classList.remove("input-error");
+      });
+    }
   }
 
   /* ---------- Footer year ---------- */

@@ -26,7 +26,7 @@
   });
 
   /* ---------- 3D tilt + glare on featured cards ---------- */
-  var TILT_SELECTORS = [".pillar-card", ".subscribe-card", ".ts-banner"];
+  var TILT_SELECTORS = [".pillar-card", ".join-card", ".ts-banner"];
 
   function initTilt() {
     if (reduced || !finePointer) return;

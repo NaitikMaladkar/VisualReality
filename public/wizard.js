@@ -87,9 +87,14 @@
     if (!voices.length) return null;
     var en = voices.filter(function (v) { return /^en[-_]?/i.test(v.lang); });
     var pool = en.length ? en : voices;
+    /* Ecoverius speaks in a deep, grandfatherly voice — prefer male/neural
+       voices first, then any natural voice (pitch is lowered in speak()). */
     return (
-      pool.find(function (v) { return /natural|neural|google uk english female|samantha|aria|serena/i.test(v.name); }) ||
-      pool.find(function (v) { return /google|samantha|daniel|zira|karen|moira/i.test(v.name); }) ||
+      pool.find(function (v) { return /google uk english male/i.test(v.name); }) ||
+      pool.find(function (v) { return /(male)/i.test(v.name) && /natural|neural|enhanced|premium/i.test(v.name); }) ||
+      pool.find(function (v) { return /daniel|david|alex|george|rishi|arthur|fred|guy|james|christopher|eric|liam|brian|matthew|joey|steffan/i.test(v.name); }) ||
+      pool.find(function (v) { return /male/i.test(v.name); }) ||
+      pool.find(function (v) { return /natural|neural|enhanced|premium|google/i.test(v.name); }) ||
       pool[0]
     );
   }
@@ -99,8 +104,8 @@
     try {
       speechSynthesis.cancel();
       var u = new SpeechSynthesisUtterance(stripEmoji(text));
-      u.rate = 0.97;
-      u.pitch = 1.02;
+      u.rate = 0.94;
+      u.pitch = 0.6; /* deep, wise, grandfather-of-the-forest tone */
       u.volume = 0.9;
       var v = pickVoice();
       if (v) u.voice = v;
