@@ -176,3 +176,21 @@ Stage Summary:
 - Homepage now hosts Ecoverius the Eco Wizard: click → animated expressions + typewriter speech + TTS of 22 Earth-protection methods (plus facts/quotes/farewells), eco quiz with badges, 6 robe themes, mute, hide/restore, touch gestures, keyboard shortcuts — all state in localStorage, zero dependencies
 - Site-wide animation layer added: reading progress bar (all pages), shimmer/shine/underline/spin/leaf/parallax polish, every effect reduced-motion aware
 - Site now has 27 files in download/visual-reality-site/ (8 pages + shared assets + wizard)
+
+---
+Task ID: 10
+Agent: main (Z.ai)
+Task: Rework the Eco Wizard per user's new direction — use the uploaded druid character image (bg removed), place him fixed INSIDE the hero banner at the right side beside the "Our mission" button (not floating), and make him speak a welcome message via TTS on page open/refresh.
+
+Work Log:
+- Processed upload Gemini_Generated_Image_1tkhea1tkhea1tkh.png via scripts/wizard_bg_remove.py: scipy connected-component flood fill from image borders (threshold min>=238, chroma<=14 → protects the gray/white beard and pale robe highlights), 1px alpha erosion + 1.1px Gaussian feather to kill white fringe, trimmed 2816x1536 → 618x760, saved to public/wizard.png (695 KB); visual check on mint background = clean edges, interior whites intact
+- Replaced the previous CSS-drawn floating wizard wholesale: wizard.css rewritten (~270 lines) — .hero-wizard absolute at bottom-left of .hero-art (left column gap-safe, no fixed positioning); idle bob + ground shadow, squash-stretch bounce on click, speaking aura (drop-shadow pulse), 3 twinkling sparkles, white speech bubble with gradient top bar + tail + typewriter caret, persisted mute button, breakpoints 1180/1024/560 (≤1024px he stands centered under the illustration in flow), full reduced-motion block
+- wizard.js rewritten (~300 lines IIFE): welcome message typewriter + TTS via Web Speech API ~900ms after load (every open/refresh, as requested); autoplay-policy-safe fallback — if nothing is speaking after 800ms (Safari/gesture-blocked), hint flips to "Tap anywhere to hear my welcome!" and the first pointerdown/keydown speaks it; click cycles 20 Earth-protection tips (spoken, duration-estimated auto-hide); click while speaking hushes; Enter/Space keyboard support; Escape dismisses; mute persists to ecoWizardMuted and replays current message on unmute; speech pauses on tab hide, canceled on pagehide; emoji stripped from spoken text (CO₂ → CO2); voices warmed via onvoiceschanged
+- index.html: old floating wizard block + restore chip + robe color panel + quiz panel + gesture hint removed (~95 lines); wizard markup now inside .hero-art with aria-hidden moved to the SVG only (wizard stays accessible); head link + wizard.js include unchanged
+- Verified zero legacy references (eco-wizard/speech-bubble/quiz/color-panel/wiz-restore/has-wizard all gone); node --check pass
+- agent-browser verification: 1280px — wizard stands in hero beside the mission button row, welcome bubble with typewriter + fallback hint, click → tip 1, click → tip 2, mute (aria-pressed, 🔇, localStorage), Escape hides bubble, position=absolute (not fixed); 900px — centered under illustration; 390px — x=129/w=132 perfectly centered, bubble fits viewport, tip cycling, zero console errors/warnings on all checks
+- Synced index.html, wizard.css, wizard.js, wizard.png to download/visual-reality-site/ (28 files)
+
+Stage Summary:
+- Ecoverius is now an illustrated druid character (user asset, bg removed) fixed in the hero banner's right side beside the "Our mission" button — not floating; greets visitors aloud on every open/refresh with graceful TTS fallback; click for spoken Earth-protection methods
+- The CSS-drawn character's quiz/robe-theme panels were retired with the redesign (quiz content was part of the old code-drawn build; the image edition focuses on welcome + tips + mute, all verified)
