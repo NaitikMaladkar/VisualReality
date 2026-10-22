@@ -205,4 +205,96 @@
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- Reading progress bar (all pages) ---------- */
+  var progressBar = document.createElement("div");
+  progressBar.className = "scroll-progress";
+  progressBar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(progressBar);
+
+  var progressTicking = false;
+
+  function updateProgressBar() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var ratio = max > 0 ? Math.min((window.scrollY || window.pageYOffset) / max, 1) : 0;
+    progressBar.style.transform = "scaleX(" + ratio + ")";
+    progressTicking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!progressTicking) {
+        progressTicking = true;
+        window.requestAnimationFrame(updateProgressBar);
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", updateProgressBar);
+  updateProgressBar();
+
+  /* ---------- Hero: ambient falling leaves (homepage) ---------- */
+  var hero = document.querySelector(".hero");
+
+  if (hero && !prefersReducedMotion) {
+    var leafCount = 11;
+
+    for (var i = 0; i < leafCount; i++) {
+      var leaf = document.createElement("span");
+      leaf.className = "leaf-fall";
+      leaf.setAttribute("aria-hidden", "true");
+
+      var size = 9 + Math.random() * 9; // 9–18px
+      leaf.style.width = size + "px";
+      leaf.style.height = size + "px";
+      leaf.style.left = 2 + Math.random() * 96 + "%";
+      leaf.style.setProperty("--dx", Math.round(-90 + Math.random() * 180) + "px");
+      leaf.style.setProperty("--fy", Math.round(hero.offsetHeight + 70) + "px");
+      leaf.style.setProperty("--o", (0.22 + Math.random() * 0.26).toFixed(2));
+      leaf.style.setProperty("--t", (9 + Math.random() * 8).toFixed(1) + "s");
+      leaf.style.setProperty("--dl", "-" + (Math.random() * 14).toFixed(1) + "s");
+
+      hero.appendChild(leaf);
+    }
+
+    // Re-measure on resize so leaves always fall the full hero height
+    window.addEventListener(
+      "resize",
+      function () {
+        var fy = Math.round(hero.offsetHeight + 70) + "px";
+        Array.prototype.forEach.call(
+          hero.querySelectorAll(".leaf-fall"),
+          function (l) {
+            l.style.setProperty("--fy", fy);
+          }
+        );
+      },
+      { passive: true }
+    );
+  }
+
+  /* ---------- Hero art: gentle cursor parallax (fine pointers) ---------- */
+  var heroArt = document.querySelector(".hero-art");
+  var heroSvg = document.querySelector(".hero-art .hero-svg");
+
+  if (
+    heroArt &&
+    heroSvg &&
+    !prefersReducedMotion &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches
+  ) {
+    heroArt.addEventListener("mousemove", function (e) {
+      var rect = heroArt.getBoundingClientRect();
+      var dx = (e.clientX - rect.left) / rect.width - 0.5;
+      var dy = (e.clientY - rect.top) / rect.height - 0.5;
+      heroSvg.style.transform =
+        "translate(" + (dx * 12).toFixed(1) + "px," + (dy * 12).toFixed(1) + "px)";
+    });
+
+    heroArt.addEventListener("mouseleave", function () {
+      heroSvg.style.transform = "translate(0px, 0px)";
+    });
+  }
 })();
