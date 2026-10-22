@@ -1098,7 +1098,7 @@ button {
 .to-top {
   position: fixed;
   right: 1.4rem;
-  bottom: 1.4rem;
+  bottom: 6.6rem; /* sits above the TerraSense AI chat button */
   z-index: 70;
   display: grid;
   place-items: center;

@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="wizard.css" />
   <link rel="stylesheet" href="intro.css" />
+  <link rel="stylesheet" href="motion.css" />
+  <link rel="stylesheet" href="terrasense.css" />
 </head>
 <body>
   <!-- ======= CINEMATIC INTRO OVERLAY ======= -->
@@ -151,6 +153,9 @@
   <main id="main">
     <!-- ======= HERO ======= -->
     <section class="hero" id="home">
+      <!-- ambient gradient orbs -->
+      <span class="hero-orb orb-a" aria-hidden="true"></span>
+      <span class="hero-orb orb-b" aria-hidden="true"></span>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow reveal">
@@ -305,6 +310,30 @@
       </div>
     </section>
 
+    <!-- ======= SCIENCE TICKER ======= -->
+    <div class="vr-ticker" aria-hidden="true">
+      <div class="vr-ticker-track">
+        <div class="vr-ticker-half">
+          <span class="vr-tick"><b>Solar</b>&nbsp;is now the cheapest electricity in history — IEA</span>
+          <span class="vr-tick"><b>37.4 Gt</b>&nbsp;CO₂ emitted in 2024 — the curve must bend</span>
+          <span class="vr-tick"><b>1.6 TW</b>&nbsp;of renewables added in a single year</span>
+          <span class="vr-tick"><b>Fusion</b>&nbsp;achieved its first net-energy gain — Dec 2022</span>
+          <span class="vr-tick"><b>1 in 5</b>&nbsp;new cars sold worldwide is now electric</span>
+          <span class="vr-tick"><b>10%</b>&nbsp;of world electricity now comes from wind</span>
+          <span class="vr-tick"><b>24,000</b>&nbsp;readers start Sunday with the Tomorrow Brief</span>
+        </div>
+        <div class="vr-ticker-half">
+          <span class="vr-tick"><b>Solar</b>&nbsp;is now the cheapest electricity in history — IEA</span>
+          <span class="vr-tick"><b>37.4 Gt</b>&nbsp;CO₂ emitted in 2024 — the curve must bend</span>
+          <span class="vr-tick"><b>1.6 TW</b>&nbsp;of renewables added in a single year</span>
+          <span class="vr-tick"><b>Fusion</b>&nbsp;achieved its first net-energy gain — Dec 2022</span>
+          <span class="vr-tick"><b>1 in 5</b>&nbsp;new cars sold worldwide is now electric</span>
+          <span class="vr-tick"><b>10%</b>&nbsp;of world electricity now comes from wind</span>
+          <span class="vr-tick"><b>24,000</b>&nbsp;readers start Sunday with the Tomorrow Brief</span>
+        </div>
+      </div>
+    </div>
+
     <!-- ======= STATS ======= -->
     <section class="stats" aria-label="Visual Reality in numbers">
       <div class="container">
@@ -412,112 +441,49 @@
       </div>
     </section>
 
-    <!-- ======= INNOVATIONS ======= -->
+    <!-- ======= TERRASENSE AI — LONG BANNER ======= -->
     <section class="innovations section" id="innovations">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Fresh from the frontier</p>
-          <h2>Innovations in the spotlight</h2>
-          <p class="section-sub">
-            Four fields where tomorrow is already quietly working &mdash; each one
-            verified by our science team and scored against our sustainability bar.
-          </p>
-        </div>
-
-        <div class="innovations-grid">
-          <article class="innov-card reveal">
-            <div class="innov-top">
-              <span class="innov-icon">
-                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                  <path d="M10 34 17 22h20l-7 12H10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                  <path d="M18.5 22 22 34M29.5 22 26 34" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="31" cy="11" r="4.5" stroke="currentColor" stroke-width="2"/>
-                  <path d="M31 3.5V6M38.5 11H36M26 11h-2.5M36.4 5.6l-1.8 1.8M25.6 5.6l1.8 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <span class="innov-tag">Energy</span>
+        <div class="ts-banner reveal" id="terrasenseBanner">
+          <div class="ts-banner-grid">
+            <div class="ts-banner-copy">
+              <p class="eyebrow">New &middot; On-site AI guide</p>
+              <h2>Meet <span class="ts-grad">TerraSense&nbsp;AI</span> — your resident science copilot.</h2>
+              <p class="ts-banner-lead">
+                Born from the same climate-model research our stories cover, TerraSense answers
+                questions about every page, game and simulator here &mdash; plus the science behind
+                them. Clean energy, net zero, circular design, the people behind it all&hellip; just ask.
+              </p>
+              <ul class="ts-points">
+                <li>Knows every page, game and simulator</li>
+                <li>Answers science &amp; sustainability questions</li>
+                <li>Runs 100% in your browser &mdash; no accounts, no tracking</li>
+                <li>Session chat &mdash; history clears on refresh</li>
+              </ul>
+              <div class="ts-banner-actions">
+                <button class="btn btn-light" type="button" data-terrasense-open>
+                  Chat with TerraSense now
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <span class="ts-banner-hint">or tap the &#10022; button in the corner &mdash; on any page</span>
+              </div>
             </div>
-            <h3>HelioGrid</h3>
-            <p class="innov-kicker">Sunlight for every rooftop</p>
-            <p>
-              Neighbourhood-scale microgrids that stitch inexpensive solar panels into one
-              intelligent, self-balancing power web &mdash; cutting energy bills and blackout
-              risk at the same time.
-            </p>
-            <a href="#subscribe" class="text-link" aria-label="Learn more about HelioGrid in the Tomorrow Brief">Learn more
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </article>
 
-          <article class="innov-card reveal" style="--d:.08s">
-            <div class="innov-top">
-              <span class="innov-icon">
-                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                  <rect x="14" y="14" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
-                  <rect x="21" y="21" width="6" height="6" rx="1.5" fill="currentColor"/>
-                  <path d="M20 14V8M28 14V8M20 40v-6M28 40v-6M14 20H8M14 28H8M40 20h-6M40 28h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+            <div class="ts-banner-visual" aria-hidden="true">
+              <span class="tsb-ring r1"></span>
+              <span class="tsb-ring r2"></span>
+              <span class="tsb-core">
+                <svg width="44" height="44" viewBox="0 0 48 48" fill="none"><rect x="8" y="14" width="32" height="26" rx="9" fill="rgba(255,255,255,0.16)" stroke="currentColor" stroke-width="2.4"/><path d="M24 14V7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="6" r="2.6" fill="currentColor"/><circle cx="18" cy="26" r="2.6" fill="currentColor"/><circle cx="30" cy="26" r="2.6" fill="currentColor"/><path d="M18.5 33.5c3.4 2.4 7.6 2.4 11 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
               </span>
-              <span class="innov-tag">Climate AI</span>
+              <span class="tsb-spark s1">&#10022;</span>
+              <span class="tsb-spark s2">&#10022;</span>
+              <span class="tsb-spark s3">&#10022;</span>
+              <div class="ts-demo">
+                <div class="ts-demo-row q"><span class="ts-demo-bubble" id="tsDemoQ"></span></div>
+                <div class="ts-demo-row a"><span class="ts-demo-bubble" id="tsDemoA"></span></div>
+              </div>
             </div>
-            <h3>TerraSense AI</h3>
-            <p class="innov-kicker">A weather eye powered by learning</p>
-            <p>
-              Machine-learning models that fuse satellite and ground sensors to forecast
-              floods, droughts and heatwaves weeks earlier &mdash; giving farmers, insurers and
-              cities precious time to act.
-            </p>
-            <a href="#subscribe" class="text-link" aria-label="Learn more about TerraSense AI in the Tomorrow Brief">Learn more
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </article>
-
-          <article class="innov-card reveal" style="--d:.16s">
-            <div class="innov-top">
-              <span class="innov-icon">
-                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                  <path d="M36 24a12 12 0 1 1-3.5-8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M36 9v7h-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 24a12 12 0 0 0 3.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
-                  <path d="M12 39v-7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-                </svg>
-              </span>
-              <span class="innov-tag">Materials</span>
-            </div>
-            <h3>LoopWeave</h3>
-            <p class="innov-kicker">Products designed to disappear</p>
-            <p>
-              Compostable packaging and textiles engineered from plant fibres, built to
-              return to the soil within 60 days instead of lingering in landfill for
-              centuries. Waste, redesigned out of existence.
-            </p>
-            <a href="#subscribe" class="text-link" aria-label="Learn more about LoopWeave in the Tomorrow Brief">Learn more
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </article>
-
-          <article class="innov-card reveal" style="--d:.24s">
-            <div class="innov-top">
-              <span class="innov-icon">
-                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                  <path d="M24 7C24 7 13.5 19.5 13.5 27a10.5 10.5 0 0 0 21 0C34.5 19.5 24 7 24 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                  <path d="M19 28.5a5 5 0 0 0 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M10 41c2.8-1.8 5.7-1.8 8.5 0 2.8 1.8 5.7 1.8 8.5 0 2.8-1.8 5.7-1.8 8.5 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
-                </svg>
-              </span>
-              <span class="innov-tag">Water</span>
-            </div>
-            <h3>AquaPure</h3>
-            <p class="innov-kicker">Drinking water from thin air</p>
-            <p>
-              Off-grid harvesters that pull moisture straight from the atmosphere using
-              only sunlight &mdash; safe drinking water for the regions the pipelines forgot,
-              with no bottles and no boreholes.
-            </p>
-            <a href="#subscribe" class="text-link" aria-label="Learn more about AquaPure in the Tomorrow Brief">Learn more
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -757,10 +723,10 @@
         <nav class="footer-col" aria-label="Topics">
           <h3>Topics</h3>
           <ul>
-            <li><a href="#innovations">Clean energy</a></li>
+            <li><a href="impact.html">Clean energy</a></li>
             <li><a href="#innovations">Climate AI</a></li>
-            <li><a href="#innovations">Circular design</a></li>
-            <li><a href="#innovations">Water tech</a></li>
+            <li><a href="balance.html">Circular design</a></li>
+            <li><a href="museum.html">Water tech</a></li>
           </ul>
         </nav>
 
@@ -798,5 +764,7 @@
   <script src="intro.js"></script>
   <script src="wizard.js"></script>
   <script src="script.js"></script>
+  <script src="motion.js"></script>
+  <script src="terrasense.js"></script>
 </body>
 </html>

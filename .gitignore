@@ -52,3 +52,10 @@ prompt
 server.log
 # Skills directory
 /skills/
+# project-local artifacts (site copies, uploads, verification shots)
+/download/
+/upload/
+/tool-results/
+/db/
+scripts/*.png
+scripts/*.jpg

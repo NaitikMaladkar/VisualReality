@@ -1,0 +1,308 @@
+/* ============================================================
+   Site-wide motion layer — extra animations for every page
+   Ripple buttons · nav underline · tilt glare · icon draw-in
+   science ticker · hero orbs · border beam · micro-bounces
+   All effects respect prefers-reduced-motion.
+   ============================================================ */
+
+/* ---------- Buttery anchor scrolling ---------- */
+html { scroll-behavior: smooth; }
+
+section[id], div[id="mission"] {
+  scroll-margin-top: 92px;
+}
+
+/* ---------- Click ripple on buttons ---------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  animation: tsRipple 0.65s ease-out forwards;
+}
+
+.btn-ghost .ts-ripple,
+.btn-outline-light .ts-ripple,
+.nav-cta .ts-ripple {
+  background: radial-gradient(
+    circle,
+    rgba(13, 148, 136, 0.3) 0%,
+    rgba(13, 148, 136, 0) 65%
+  );
+}
+
+@keyframes tsRipple {
+  to { transform: scale(3); opacity: 0; }
+}
+
+/* ---------- Nav link underline sweep ---------- */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2.4px;
+  border-radius: 3px;
+  background: var(--grad);
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+}
+
+/* ---------- 3D tilt cards (driven by motion.js) ---------- */
+[data-tilt] {
+  transform-style: preserve-3d;
+}
+
+.ts-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    460px circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 255, 255, 0.3),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+[data-tilt]:hover .ts-glare { opacity: 1; }
+
+/* ---------- Pillar icons: stroke draws itself in on reveal ---------- */
+.js .pillar-card .pillar-icon svg :is(path, ellipse, circle) {
+  stroke-dasharray: 130;
+  stroke-dashoffset: 0;
+}
+
+.js .pillar-card.in .pillar-icon svg :is(path, ellipse, circle) {
+  animation: tsIconDraw 1.15s cubic-bezier(0.5, 0, 0.2, 1) both;
+  animation-delay: calc(var(--d, 0s) + 0.25s);
+}
+
+@keyframes tsIconDraw {
+  from { stroke-dasharray: 130; stroke-dashoffset: 130; }
+  to   { stroke-dasharray: 130; stroke-dashoffset: 0; }
+}
+
+/* ---------- Tag rows: staggered pop after their card lands ---------- */
+.js .pillar-card .tag-row li {
+  opacity: 0;
+  transform: translateY(10px) scale(0.92);
+  transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.js .pillar-card.in .tag-row li {
+  opacity: 1;
+  transform: none;
+}
+
+.js .pillar-card.in .tag-row li:nth-child(1) { transition-delay: calc(var(--d, 0s) + 0.3s); }
+.js .pillar-card.in .tag-row li:nth-child(2) { transition-delay: calc(var(--d, 0s) + 0.4s); }
+.js .pillar-card.in .tag-row li:nth-child(3) { transition-delay: calc(var(--d, 0s) + 0.5s); }
+
+/* ---------- Science ticker (homepage) ---------- */
+.vr-ticker {
+  overflow: hidden;
+  background: #06281d;
+  border-top: 1px solid rgba(45, 212, 191, 0.25);
+  border-bottom: 1px solid rgba(45, 212, 191, 0.25);
+  padding: 0.72rem 0;
+  user-select: none;
+}
+
+.vr-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tsTicker 46s linear infinite;
+}
+
+.vr-ticker:hover .vr-ticker-track {
+  animation-play-state: paused;
+}
+
+.vr-ticker-half {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.vr-tick {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-right: 3rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  color: #b9f4dd;
+}
+
+.vr-tick b {
+  color: #5eead4;
+  font-weight: 700;
+}
+
+.vr-tick::before {
+  content: "✦";
+  color: #f5b940;
+  font-size: 0.7rem;
+}
+
+@keyframes tsTicker {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- Hero: drifting gradient orbs ---------- */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(52px);
+}
+
+.hero .hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.orb-a {
+  width: 380px;
+  height: 380px;
+  left: -140px;
+  top: -110px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.32), transparent 65%);
+  animation: tsOrbA 21s ease-in-out infinite alternate;
+}
+
+.orb-b {
+  width: 320px;
+  height: 320px;
+  right: -120px;
+  bottom: -90px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.3), transparent 65%);
+  animation: tsOrbB 26s ease-in-out infinite alternate;
+}
+
+@keyframes tsOrbA {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(70px, 55px) scale(1.16); }
+}
+
+@keyframes tsOrbB {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-60px, -48px) scale(1.12); }
+}
+
+/* ---------- Newsletter card: rotating border beam ---------- */
+@property --beam {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.subscribe-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.6px;
+  background: conic-gradient(
+    from var(--beam),
+    transparent 0turn 0.9turn,
+    rgba(16, 185, 129, 0.85) 0.96turn,
+    #ffffff 0.99turn,
+    transparent 1turn
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: tsBeamSpin 5.4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes tsBeamSpin {
+  to { --beam: 360deg; }
+}
+
+/* ---------- Back-to-top: cheerful bounce ---------- */
+.to-top:hover svg {
+  animation: tsHop 0.55s ease;
+}
+
+@keyframes tsHop {
+  0% { transform: translateY(0); }
+  35% { transform: translateY(-4px); }
+  70% { transform: translateY(1px); }
+  100% { transform: translateY(0); }
+}
+
+/* ---------- Footer brand leaf sway on hover ---------- */
+.brand-footer:hover .logo-mark {
+  animation: tsSway 0.9s ease-in-out;
+}
+
+@keyframes tsSway {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-7deg); }
+  65% { transform: rotate(5deg); }
+}
+
+/* ============================================================
+   Reduced motion — switch everything off
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .ts-ripple { display: none; }
+
+  .nav-link::after { transition: none; }
+
+  [data-tilt] { transform: none !important; }
+  .ts-glare { display: none; }
+
+  .js .pillar-card .pillar-icon svg :is(path, ellipse, circle) {
+    animation: none !important;
+  }
+
+  .js .pillar-card .tag-row li {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .vr-ticker-track { animation: none; }
+
+  .hero-orb { animation: none; }
+
+  .subscribe-card::after { animation: none; }
+
+  .to-top:hover svg,
+  .brand-footer:hover .logo-mark { animation: none; }
+}
