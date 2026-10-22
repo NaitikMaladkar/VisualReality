@@ -563,7 +563,7 @@
       '<h3 class="bg-card-name">That\u2019s a wrap.</h3>' +
       '<p class="bg-card-blurb">All ten proposals are on the record. Shuffle a fresh deck and see if you can hold both meters at once — the deck deals differently every run.</p>' +
       '<div class="bg-card-actions"><button type="button" class="btn btn-primary" id="bg-again-inline">Play again</button>' +
-      '<a class="btn btn-ghost" href="challenge.html">Eco Challenge</a></div>';
+      '<a class="btn btn-ghost" href="/challenge">Eco Challenge</a></div>';
     var again = document.getElementById("bg-again-inline");
     if (again) again.addEventListener("click", startGame);
   }
