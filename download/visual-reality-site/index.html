@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visual Reality — Tech for Tomorrow | Science, Innovation &amp; Sustainability</title>
+  <script>
+    /* Activates the cinematic intro before first paint (JS + motion-ok only).
+       No-JS visitors and reduced-motion users never see the overlay. */
+    (function () {
+      try {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("will-intro");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta name="description" content="Visual Reality spotlights the breakthroughs in clean energy, climate-smart AI and circular design where science, innovation and sustainability meet. Tech for tomorrow — without costing the Earth." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='4' y1='4' x2='44' y2='44' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%230ea672'/%3E%3Cstop offset='1' stop-color='%230d9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='44' height='44' rx='13' fill='url(%23g)'/%3E%3Cpath d='M13.5 34.5C13.5 22.5 22.5 13.5 34.5 13.5C34.5 25.5 25.5 34.5 13.5 34.5Z' fill='%23ffffff'/%3E%3Cpath d='M17 31C21.5 26.5 27 21 31.5 16.5' stroke='%230b8266' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M21.8 26.2V22.4' stroke='%230b8266' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='21.8' cy='20.9' r='1.5' fill='%230b8266'/%3E%3Cpath d='M26.5 21.5H30' stroke='%230b8266' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='31.6' cy='21.5' r='1.5' fill='%230b8266'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,8 +22,84 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="wizard.css" />
+  <link rel="stylesheet" href="intro.css" />
 </head>
 <body>
+  <!-- ======= CINEMATIC INTRO OVERLAY ======= -->
+  <div class="intro-overlay" id="introOverlay" role="dialog" aria-modal="true"
+       aria-label="Visual Reality brand intro">
+
+    <!-- STAGE 1 · faint brand-text cloud -->
+    <div class="intro-cloud" aria-hidden="true">
+      <span style="--x:8%;  --y:16%; --s:1.5rem;  --ls:0.12em; --r:-5deg; --d:0.05s; --o:0.18">Visual Reality</span>
+      <span style="--x:64%; --y:14%; --s:0.8rem;  --ls:0.4em;  --r:4deg;  --d:0.35s">Tech for tomorrow</span>
+      <span style="--x:12%; --y:38%; --s:1.1rem;  --ls:0.5em;  --r:-3deg; --d:0.55s; --o:0.12">Science</span>
+      <span style="--x:70%; --y:34%; --s:1.25rem; --ls:0.34em; --r:5deg;  --d:0.7s;  --o:0.16">Innovation</span>
+      <span style="--x:6%;  --y:62%; --s:0.9rem;  --ls:0.3em;  --r:-4deg; --d:0.85s">Sustainability</span>
+      <span style="--x:44%; --y:8%;  --s:0.72rem; --ls:0.5em;  --r:0deg;  --d:0.95s; --o:0.12">Est. 2026</span>
+      <span style="--x:72%; --y:56%; --s:1rem;    --ls:0.28em; --r:3deg;  --d:0.45s">Clean energy</span>
+      <span style="--x:16%; --y:82%; --s:0.85rem; --ls:0.36em; --r:-7deg; --d:0.6s">Climate AI</span>
+      <span style="--x:58%; --y:78%; --s:0.85rem; --ls:0.3em;  --r:6deg;  --d:0.75s">Circular design</span>
+      <span style="--x:30%; --y:26%; --s:0.75rem; --ls:0.4em;  --r:-2deg; --d:1s;    --o:0.11">Net zero 2040</span>
+      <span style="--x:38%; --y:88%; --s:0.78rem; --ls:0.34em; --r:2deg;  --d:0.9s">Open science</span>
+      <span style="--x:84%; --y:72%; --s:0.95rem; --ls:0.26em; --r:-3deg; --d:0.65s">Green tech</span>
+      <span style="--x:24%; --y:52%; --s:1.1rem;  --ls:0;      --r:0deg;  --d:0.4s;  --o:0.22">✦</span>
+      <span style="--x:88%; --y:24%; --s:0.8rem;  --ls:0;      --r:0deg;  --d:0.8s;  --o:0.2">✦</span>
+      <span style="--x:14%; --y:74%; --s:0.7rem;  --ls:0;      --r:0deg;  --d:1.05s; --o:0.18">✦</span>
+    </div>
+    <div class="intro-tagline" aria-hidden="true"><b>Tech for tomorrow</b></div>
+
+    <!-- atmosphere -->
+    <div class="intro-vignette" aria-hidden="true"></div>
+    <div class="intro-glow" aria-hidden="true"></div>
+    <div class="intro-grain" aria-hidden="true"></div>
+
+    <!-- STAGES 2–3 · converging emblem + neon trace -->
+    <div class="intro-stage">
+      <svg class="intro-logo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <g class="i-top">
+          <g class="ghost" aria-hidden="true">
+            <path stroke-width="2.6" d="M54 138C54 90 90 54 138 54C138 102 102 138 54 138Z"/>
+            <path stroke-width="2" d="M68 124C86 106 108 84 126 66"/>
+            <path stroke-width="2" d="M87.2 104.8V89.6"/>
+            <circle stroke-width="2" cx="87.2" cy="83.6" r="6"/>
+            <path stroke-width="2" d="M106 86H120"/>
+            <circle stroke-width="2" cx="126.4" cy="86" r="6"/>
+          </g>
+          <path class="draw i-leaf"      pathLength="100" stroke-width="2.6" d="M54 138C54 90 90 54 138 54C138 102 102 138 54 138Z"/>
+          <path class="draw i-vein-main" pathLength="100" stroke-width="2"   d="M68 124C86 106 108 84 126 66"/>
+          <path class="draw i-vein-v"    pathLength="100" stroke-width="2"   d="M87.2 104.8V89.6"/>
+          <circle class="draw i-node"    pathLength="100" stroke-width="2"   cx="87.2" cy="83.6" r="6"/>
+          <path class="draw i-vein-h"    pathLength="100" stroke-width="2"   d="M106 86H120"/>
+          <circle class="draw i-node"    pathLength="100" stroke-width="2"   cx="126.4" cy="86" r="6"/>
+        </g>
+        <g class="i-bottom">
+          <g class="ghost" aria-hidden="true">
+            <rect stroke-width="2.6" x="8" y="8" width="184" height="184" rx="52"/>
+            <circle stroke-width="2" cx="50" cy="50" r="8.4"/>
+            <circle stroke-width="1.6" cx="50" cy="50" r="17.6"/>
+          </g>
+          <rect class="draw i-badge"   pathLength="100" stroke-width="2.6" x="8" y="8" width="184" height="184" rx="52"/>
+          <circle class="draw i-dot-a" pathLength="100" stroke-width="2"   cx="50" cy="50" r="8.4"/>
+          <circle class="draw i-dot-b" pathLength="100" stroke-width="1.6" cx="50" cy="50" r="17.6"/>
+        </g>
+        <g class="i-ring-group">
+          <ellipse class="draw i-ring" pathLength="100" stroke-width="1.4" stroke-opacity="0.42" cx="100" cy="100" rx="118" ry="42" transform="rotate(-18 100 100)"/>
+          <circle class="draw i-sat"   pathLength="100" stroke-width="2"   cx="113" cy="140" r="3"/>
+        </g>
+      </svg>
+
+      <div class="intro-word" aria-hidden="true">
+        <span class="iw-line"></span>
+        <p class="iw-text">Visual <em>Reality</em></p>
+        <span class="iw-line"></span>
+      </div>
+      <p class="intro-tag2">Science &middot; Innovation &middot; Sustainability</p>
+    </div>
+
+    <button class="intro-skip" id="introSkip" type="button">Skip intro</button>
+  </div>
+
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ======= HEADER ======= -->
@@ -708,6 +795,7 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
 
+  <script src="intro.js"></script>
   <script src="wizard.js"></script>
   <script src="script.js"></script>
 </body>

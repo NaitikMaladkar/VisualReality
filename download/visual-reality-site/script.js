@@ -68,7 +68,12 @@
     });
   }
 
-  /* ---------- Reveal on scroll ---------- */
+  /* ---------- Reveal on scroll + counters ----------
+     Wrapped in initReveals() so the homepage can defer them until the
+     cinematic intro dissolves (vrIntroDone) — the site then animates in
+     underneath the fading overlay. Other pages: instant, unchanged. */
+  function initReveals() {
+
   var revealEls = Array.prototype.slice.call(
     document.querySelectorAll(".reveal")
   );
@@ -157,6 +162,21 @@
     counters.forEach(function (el) {
       counterObserver.observe(el);
     });
+  }
+
+  } // end initReveals
+
+  if (document.getElementById("introOverlay")) {
+    var revealsStarted = false;
+    var startReveals = function () {
+      if (revealsStarted) return;
+      revealsStarted = true;
+      initReveals();
+    };
+    document.addEventListener("vrIntroDone", startReveals, { once: true });
+    setTimeout(startReveals, 9500); // failsafe if intro.js ever fails
+  } else {
+    initReveals();
   }
 
   /* ---------- Newsletter form (client-side demo) ---------- */

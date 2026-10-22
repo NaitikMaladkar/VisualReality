@@ -205,8 +205,22 @@
     scheduleHide(spokenMillis(WELCOME) + 2000);
   }
 
-  // slight delay so the hero entrance animation settles first
-  setTimeout(welcome, 900);
+  // Welcome after the cinematic intro dissolves (homepage), or right away
+  // when there is no intro. Failsafe timers keep this bulletproof.
+  function whenIntroDone(cb) {
+    var fired = false;
+    function go() {
+      if (fired) return;
+      fired = true;
+      cb();
+    }
+    document.addEventListener("vrIntroDone", go, { once: true });
+    setTimeout(go, 9500);
+  }
+
+  whenIntroDone(function () {
+    setTimeout(welcome, 700); // let the hero settle first
+  });
 
   /* ============================================
      INTERACTION — one eco tip per click
